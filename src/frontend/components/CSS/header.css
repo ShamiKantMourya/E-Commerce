@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid black;
+}
+.logoPart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    border-bottom: 1px solid black;
+}
+.logoImg{
+    cursor: pointer;
+    height: 6rem;
+    width: 6rem;
+}
+.searchBar{
+    width: 100%;
+    max-width: 25rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px 20px;
+}
+.searchBar input{
+    background: transparent;
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.596);
+}
+::placeholder{
+    color: rgba(0, 0, 0, 0.596);
+}
+.searchBar .searchIcon{
+    width: 25px;
+    height: 20px;
+}
+.searchBar button{
+    border: 0;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.wishlist{
+    height: 1.3rem;
+    padding: 0 3rem;
+}
+.cart{
+    height: 1.3rem;
+}
+.user{
+    height: 1.3rem;
+}
