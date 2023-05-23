@@ -20,7 +20,7 @@ export default function SignIn() {
     <Header />
     {/* <img src=''  alt='pets'/> */}
     <div className='login-container'>
-      <form>
+      <form action='#'>
         <img className='avatar' src= {IMAGES.Avatar} alt='avatar' />
       <h2 className='txt'>Welcome</h2>
       <div className='inputbox one focus'>
