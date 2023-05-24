@@ -10,17 +10,17 @@ const Footer = () => {
         <div className='explore'>
             <h2>Explore</h2>
             <div className='links'>
-                <Link to= "">Pets</Link>
-                <Link to= "">Products</Link>
-                <Link to= "">Curling Tails Blogs</Link>
+                <Link className='underline-hover-effect' to= "">Check Breeds</Link>
+                <Link className='underline-hover-effect' to= "">Our Products</Link>
+                <Link className='underline-hover-effect' to= "">Curling Tails Blogs</Link>
             </div>
         </div>
             <div className='needHelp'>
                 <h2>Need Help ?</h2>
                 <div className='links'>
-                    <Link to="">Track Your Order</Link>
-                    <Link to= "">Privacy Policy</Link>
-                    <Link to="">Return and Refunds</Link>
+                    <Link className='underline-hover-effect' to="">Track Your Order</Link>
+                    <Link className='underline-hover-effect' to= "">Privacy Policy</Link>
+                    <Link className='underline-hover-effect' to="">Return and Refunds</Link>
                 </div>
             </div>
             <div className='stayConnected'>
@@ -36,9 +36,9 @@ const Footer = () => {
     <div class="wrapper">
       <small>&copy;2023 <strong>Curling Tails</strong>, All Rights Reserved </small>
       <nav class="footer-nav">
-        <Link to= "">Back to Top</Link>
-        <Link to="">Terms of Use</Link>
-        <Link to="">Privacy</Link>
+        <Link className='underline-hover-effect'  to= "">Back to Top</Link>
+        <Link className='underline-hover-effect' to="">Terms of Use</Link>
+        <Link className='underline-hover-effect' to="">Privacy</Link>
       </nav>
     </div>
   </footer>
