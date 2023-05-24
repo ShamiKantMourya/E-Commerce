@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone,faEnvelope,faMagnifyingGlass,faCartShopping,faHeart} from '@fortawesome/free-solid-svg-icons';
 import "./CSS/header.css";
 
+import {AuthContext} from "../Contexts/AuthContext";
 import IMAGES from "../image";
 
 function Header() {
+  const encodedLoginToken = localStorage.getItem("encodedLoginToken");
+  const {logoutHandler} = useContext(AuthContext);
   return (
     <div>
       <div className="header">
@@ -28,7 +31,7 @@ function Header() {
                <div className="link">
                <Link to= "/cart">{<FontAwesomeIcon className="cart" icon={faCartShopping} />}</Link>
                <Link  to= "/wishlist">{<FontAwesomeIcon className="wishlist" icon={faHeart} />}</Link>
-               <Link to= "/signin">{<button>Login</button>}</Link>
+              {(!encodedLoginToken) ? <Link to="/signin"> <button>Login</button></Link> :  <button onClick={logoutHandler}>Logout</button>}
                </div>
             </div>
     </div>
