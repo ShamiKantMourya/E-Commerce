@@ -1,92 +1,133 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-.container{
-    height: 100vh;
-    width: 100%;
-}
-.header{
+:root {
+    --accent: #aadee8;
+    --ac_dark: #4798a3;
+    --ac_black: #06272b;
+    --ac_light: #d3edf1;
+  }
+  
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    /* border: 1px dashed red; */
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  a{
+      text-decoration: none;
+      color: white;
+  }
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&display=swap");
+  
+  /* font-family: 'Montserrat', sans-serif;
+  font-family: 'Oswald', sans-serif; */
+  
+
+  .headerParent {
+    background: var(--ac_black);
+    color: white;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
     align-items: center;
-    padding: 1rem 1rem;
-    border-bottom: 1px solid black;
-}
-.logoPart{
+  
+  }
+  .header {
+    background: var(--ac_black);
+    color: white;
     display: flex;
+    width: 96vw;
+    /* flex-direction: column; */
     justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-    /* border-bottom: 1px solid black; */
-    background: linear-gradient(90deg, rgba(169,186,228,1) 31%, rgba(147,105,190,1) 76%);
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-}
-.logoImg{
-    cursor: pointer;
-    height: 6rem;
-    width: 6rem;
-}
-.searchBar{
-    width: 100%;
-    max-width: 25rem;
+    overflow: hidden;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.205);
+  
+  }
+
+  .contact{
     display: flex;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 15px;
-    padding: 10px 20px;
-    background-color: #fff;
-}
-.searchBar input{
-    background: transparent;
-    flex: 1;
+  }
+  .contact p{
+    padding: 0px 10px;
+    color:rgba(255, 255, 255,0.5);
+  }
+  .contact p span{
+    padding: 0px 5px;
+    color: white;
+  }
+
+
+  .searchBar{
+    display: flex;
+    width: 30%;
+  }
+
+  .searchBar input {
+    padding: 10px 30px;
+    border-radius: 50px 0px 0px 50px ;
+    width: 100%;
+    border: 2px solid var(--ac_black);
+  }
+  .searchBar button {
+    padding: 10px 30px;
+    border-radius: 0px 50px 50px 0px;
     border: none;
     outline: none;
-    font-size: 15px;
-}
-::placeholder{
-    color: rgba(0, 0, 0, 0.596);
-}
-.searchBar .searchIcon{
-    width: 25px;
-    height: 20px;
-}
-.searchBar button{
-    border: 0;
-    background-color: transparent;
-    border-radius: 50%;
-    cursor: pointer;
-}
-.wishlist{
-    height: 1.3rem;
-    padding: 0 3rem;
-}
-.cart{
-    height: 1.3rem;
-}
-.user{
-    height: 1.3rem;
-}
-.link a{
-    color: #fff;
-}
-.link button{
-    width: 3.3rem;
-    height: 1.7rem;
-    border-radius: 5px;
-    font-weight: 600;
-    border: none;
-    transition: 0.3s ease-out;
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-}
-.link{
+    background: var(--accent);
+    border: 2px solid var(--ac_black);
+    color: var(--ac_black);
+  }
+
+
+  .logoPart {
+    background: var(--ac_black);
+    color: white;
     display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
     align-items: center;
+    overflow: hidden;
+    width: 96vw;
+    padding: 10px;
+
+  
+  }
+
+  .imgParent{
+    width: 35%;
+  }
+ 
+  .logoImg{
+    height: 40px;
+    margin: 10px;
+  
+  }
+
+
+  .link{
+    width: 35%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+.linkChild a{
+   padding: 0px 20px ; 
 }
-.link button:hover{
-    background-color: rgba(0, 0, 0, 0.16);
-    border: 1px solid #fff;
-    transition: 0.3s ease-in;
-    color: #fff;
+
+.linkChild a button{
+    padding: 10px 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: var(--accent);
+    border: none;
+    border-radius: 50px;
+    transition: 0.33s all ease-out;
+
 }
+.linkChild a button:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.295);
+}
+
