@@ -18,9 +18,9 @@ export default function SignIn() {
   return (
     <>
     <Header />
-    {/* <img src=''  alt='pets'/> */}
+    <div className='main'>
     <div className='login-container'>
-      <form action='#'>
+      <form>
         <img className='avatar' src= {IMAGES.Avatar} alt='avatar' />
       <h2 className='txt'>Welcome</h2>
       <div className='inputbox one focus'>
@@ -39,12 +39,13 @@ export default function SignIn() {
       <input type='password' value={userPassword} placeholder='Password' onChange={(event) => setUserPassword(event.target.value)} />
       </div>
     </div>
-      <button className='btn'  onClick={()=> handleLogin()}>Login</button>
+      <button type='button' className='btn'  onClick={()=> handleLogin()}>Login</button>
       <div className='signin-links'>
       <Link to="">Forget Password ?</Link>
       <Link to="/signup">Don't have an account ? SignUp</Link>
       </div>
       </form>
+    </div>
     </div>
     <Footer />
     </>
