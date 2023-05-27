@@ -130,4 +130,16 @@
     transform: scale(1.1);
     box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.295);
 }
-
+.logout{
+  padding: 10px 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--accent);
+  border: none;
+  border-radius: 50px;
+  transition: 0.33s all ease-out;
+}
+.logout:hover{
+  transform: scale(1.1);
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.295);
+}

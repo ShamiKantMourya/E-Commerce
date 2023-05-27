@@ -63,7 +63,7 @@ function Header() {
               <button>Login</button>
             </Link>
           ) : (
-            <button onClick={logoutHandler}>Logout</button>
+            <button className="logout" onClick={logoutHandler}>Logout</button>
           )}</div>
         </div>
       </div>
