@@ -1,15 +1,43 @@
-*{
+:root {
+    --accent: #aadee8;
+    --ac_dark: #4798a3;
+    --ac_black: #06272b;
+    --ac_light: #d3edf1;
+  }
+  
+  *,
+  *::after,
+  *::before {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+  }
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+    background: var(--ac_light);
 }
 .avatar{
     width: 100px;
+    border-radius: 60%;
 }
 .login-container{
-border: 1px solid black;
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
+    max-width: 700px;
+    text-align: center;
+    background: #fffefe54;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.login-container:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.txt{
+    font-family: 'Oswald', sans-serif;
 }
 form{
     width: 360px;
@@ -52,8 +80,12 @@ form h2{
     justify-content: center;
     align-items: center;
 }
-.i i{
-    color: #000;
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: var(--ac_dark);
 }
 .inputbox.input-field{
     height: 45px;
@@ -66,7 +98,7 @@ form h2{
     background: none;
     padding: 0.5rem 0.7rem;
     font-size: 1.2rem;
-    color: #555;
+    color: var(--ac_black);
 }
 .btn{
     display: block;
@@ -81,6 +113,8 @@ form h2{
     background-size: 200%;
     transition: 0.5s;
     text-transform: uppercase;
+    background: var(--ac_dark);
+    color: #fff;
 }
 .signin-links{
     display: flex;
@@ -89,9 +123,10 @@ form h2{
   }
   .signin-links a{
     text-decoration: none;
-    color: #000;
+    color: var(--ac_dark);
     padding: 5px 0px;
+    font-weight: 500;
   }
   .signin-links a:hover{
-    color: rgba(128, 128, 128, 0.733);
+    color: var(--ac_black);
   }

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useContext} from "react"
 import { Link } from 'react-router-dom';
+import { BiUserCircle,BiLockAlt } from 'react-icons/bi';
 
 
 import {AuthContext} from "../Contexts/AuthContext";
@@ -25,7 +26,7 @@ export default function SignIn() {
       <h2 className='txt'>Welcome</h2>
       <div className='inputbox one focus'>
         <div className='i'>
-        <i class="fa-regular fa-user"></i>
+        <i className='icon'><BiUserCircle /></i>
         </div>
         <div className='input-field'>
       <input type='email' value={userEmail} placeholder='Username' onChange={(event) => setUserEmail(event.target.value)} />
@@ -33,7 +34,7 @@ export default function SignIn() {
       </div>
       <div className='inputbox two'>
         <div className='i'>
-        <i class="fa-solid fa-lock"></i>
+        <i className='icon'><BiLockAlt /></i>
       </div>
       <div className='input-field'>
       <input type='password' value={userPassword} placeholder='Password' onChange={(event) => setUserPassword(event.target.value)} />
