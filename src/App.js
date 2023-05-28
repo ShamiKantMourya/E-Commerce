@@ -7,8 +7,8 @@ import SignIn from "./frontend/authPage/signIn";
 import SignUp from "./frontend/authPage/signUp";
 import CartPage from "./frontend/cartPage/cartPage";
 import RequireAuth from "./frontend/components/RequireAuth";
-import ProductPage from "./frontend/productPage/productPage";
 import Wishlist from "./frontend/wishlistPage/wishlist";
+import Dog from "./frontend/productPage/dog";
 
 
 export default function App(){
@@ -24,16 +24,13 @@ export default function App(){
               <CartPage />
             // </RequireAuth>
           } />
-            <Route path="/product" element = {
-              // <RequireAuth>
-                <ProductPage />
-              // </RequireAuth>
-            } />
              <Route path="/wishlist" element = {
               <RequireAuth>
                 <Wishlist />
               </RequireAuth>
             } />
+          {/* dog page route */}
+            <Route path="/dog" element = {<Dog />} />
     </Routes>
     </>
   )
