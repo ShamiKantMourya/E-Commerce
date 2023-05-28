@@ -7,6 +7,16 @@ const IMAGES = {
     petFood: require('./dogs food.png'),
     petCare: require('./pet care.png'),
     petShelter: require('./petShelter.jpg')
-}
+};
+export const DogBreeds = {
+    Husky: require('./husky.jpg'),
+    GermanShepherd: require('./German Shepherd.jpg'),
+    GoldenRetriever: require('./Golden Retriever.jpg'),
+    LebradorRetriever: require('./Lebrador Retriever.jpg'),
+    Boxer: require('./boxer.jpg'),
 
-export default IMAGES;
+};
+export const catBreeds = {
+    
+};
+export default IMAGES ;
