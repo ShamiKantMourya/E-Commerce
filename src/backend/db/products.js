@@ -1,5 +1,5 @@
 import { v4 as uuid } from "uuid";
-
+import {DogBreeds} from "./productImage/index";
 /**
  * Product Database can be added here.
  * You can add products of your wish with different attributes
@@ -13,98 +13,35 @@ export const products = [
           {
             _id: uuid(),
             breed: "Husky",
-            image:"",
+            image: DogBreeds.Husky,
             price: "25000",
             categoryName: "dog",
           },
           {
             _id: uuid(),
-            breed: "Persian cat",
-            image:"",
-            price: "16000",
-            categoryName: "cat",
-          },
-          {
-            _id: uuid(),
-            breed: "Macaw",
-            image:"",
-            price: "4000",
-            categoryName: "bird",
-          },
-          {
-            _id: uuid(),
-            breed: "Hamster",
-            image:"",
-            price: "1000",
-            categoryName: "rodent",
-          },
-          {
-            _id: uuid(),
             breed: "German Shepherd",
-            image:"",
+            image:DogBreeds.GermanShepherd,
             price: "15000",
             categoryName: "dog",
           },
           {
             _id: uuid(),
-            breed: "Bengal cat",
-            image:"",
-            price: "6000",
-            categoryName: "cat",
-          },
-          {
-            _id: uuid(),
-            breed: "Budgerigar",
-            image:"",
-            price: "2000",
-            categoryName: "bird",
-          },
-          {
-            _id: uuid(),
-            breed: "Guinea Pig",
-            image:"",
-            price: "2500",
-            categoryName: "rodent",
-          },
-          {
-            _id: uuid(),
             breed: "Golden Retriever",
-            image:"",
+            image:DogBreeds.GoldenRetriever,
             price: "9000",
             categoryName: "dog",
           },
           {
             _id: uuid(),
             breed: "Lebrador Retriever",
-            image:"",
+            image:DogBreeds.LebradorRetriever,
             price: "12000",
             categoryName: "dog",
           },
           {
             _id: uuid(),
-            breed: "Ragdoll cat",
-            image:"",
-            price: "8000",
-            categoryName: "cat",
-          },
-          {
-            _id: uuid(),
-            breed: "Siamese cat",
-            image:"",
-            price: "8000",
-            categoryName: "cat",
-          },
-          {
-            _id: uuid(),
-            breed: "Himalayan cat",
-            image:"",
-            price: "18000",
-            categoryName: "cat",
-          },
-          {
-            _id: uuid(),
             breed: "Boxer",
-            image: "",
+            image: DogBreeds.Boxer,
             price: "19000",
             categoryName: "dog",
           }
