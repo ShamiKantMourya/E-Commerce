@@ -1,5 +1,5 @@
 import { v4 as uuid } from "uuid";
-import {DogBreeds} from "./productImage/index";
+import {DogBreeds,catBreeds,birdBreeds,rodentBreeds} from "./productImage/index";
 /**
  * Product Database can be added here.
  * You can add products of your wish with different attributes
@@ -54,35 +54,35 @@ export const products = [
         {
           _id: uuid(),
           breed: "Persian cat",
-          image:"",
+          image:catBreeds.PersianCat,
           price: "16000",
           categoryName: "cat",
         },
         {
           _id: uuid(),
           breed: "Bengal cat",
-          image:"",
+          image:catBreeds.BengalCat,
           price: "6000",
           categoryName: "cat",
         },
         {
           _id: uuid(),
           breed: "Ragdoll cat",
-          image:"",
+          image:catBreeds.RagdollCat,
           price: "8000",
           categoryName: "cat",
         },
         {
           _id: uuid(),
           breed: "Siamese cat",
-          image:"",
+          image:catBreeds.SiameseCat,
           price: "8000",
           categoryName: "cat",
         },
         {
           _id: uuid(),
           breed: "Himalayan cat",
-          image:"",
+          image:catBreeds.HimalayanCat,
           price: "18000",
           categoryName: "cat",
         }
@@ -95,14 +95,14 @@ export const products = [
       {
         _id: uuid(),
         breed: "Macaw",
-        image:"",
+        image:birdBreeds.Macaw,
         price: "4000",
         categoryName: "bird",
       },
       {
         _id: uuid(),
         breed: "Budgerigar",
-        image:"",
+        image:birdBreeds.Budgerigar,
         price: "2000",
         categoryName: "bird",
       }
@@ -115,14 +115,14 @@ export const products = [
       {
         _id: uuid(),
         breed: "Hamster",
-        image:"",
+        image:rodentBreeds.Hamster,
         price: "1000",
         categoryName: "rodent",
       },
       {
         _id: uuid(),
         breed: "Guinea Pig",
-        image:"",
+        image:rodentBreeds.GuineaPig,
         price: "2500",
         categoryName: "rodent",
       },
