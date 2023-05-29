@@ -18,7 +18,7 @@ export const DogBreeds = {
 };
 export const catBreeds = {
     PersianCat: require('./Persian cat.jpg'),
-    BengalCat : require('./Bengal cat.jpg'),
+    BengalCat: require('./Bengal cat.jpg'),
     RagdollCat: require('./Ragdoll cat.jpg'),
     SiameseCat: require('./Siamese cat.jpg'),
     HimalayanCat: require('./Himalayan cat.jpg'),
@@ -34,4 +34,4 @@ export const rodentBreeds = {
     GuineaPig: require('./Guinea Pig.jpg'),
 };
 
-export default IMAGES ;
+export default IMAGES;
