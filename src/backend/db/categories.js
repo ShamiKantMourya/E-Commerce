@@ -11,7 +11,9 @@ export const categories = [
       items:
     [
       {
+       
     _id: uuid(),
+    link: "dog",
     categoryName: "Dogs",
     image: IMAGES.Dog,
     description:
@@ -19,6 +21,7 @@ export const categories = [
   },
   {
     _id: uuid(),
+    link: "cat",
     categoryName: "Cats",
     image: IMAGES.Cat,
     description:
@@ -26,6 +29,7 @@ export const categories = [
   },
   {
     _id: uuid(),
+    link: "bird",
     categoryName: "Birds",
     image: IMAGES.Bird,
     description:
@@ -33,6 +37,7 @@ export const categories = [
   },
   {
     _id: uuid(),
+    link: "rodent",
     categoryName: "Rodents",
     image: IMAGES.Rodents,
     description:
@@ -40,7 +45,7 @@ export const categories = [
   },
 ]},
 {
-  category:"pet products",
+  category:"petProducts",
   items:
   [
     {
