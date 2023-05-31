@@ -6,10 +6,10 @@ import IMAGES from "../image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import PetProductCategory from "../components/petProductCategory";
+import Loader from "../components/Loader";
 
 export function LandingPage() {
   const [category, setCategory] = useState([]);
-
   const getData = async () => {
     try {
       const response = await fetch("/api/categories");
@@ -24,7 +24,7 @@ export function LandingPage() {
     getData();
   }, []);
   const pet =  category?.filter(pets => pets?.category === "pets")[0]?.items;
-  console.log(pet);
+  if(category.length === 0) return <Loader />;
   return (
     <>
       <div className="container">
@@ -49,7 +49,7 @@ export function LandingPage() {
           </div>
           <div className="mainCategory">
             {
-             pet?.map(({ id, image, description }) => (
+             pet?.map(({ id, image, description,link }) => (
                 <div className="categoryBox" key={id}>
                   <div className="card">
                     <div className="categoryImg">
@@ -65,7 +65,7 @@ export function LandingPage() {
                     </div>
                     <div className="description">
                       {description}
-                      <Link to="">Adopt</Link>
+                      <Link to={`/${link}`}>Adopt</Link>
                     </div>
                   </div>
                 </div>
