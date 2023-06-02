@@ -44,9 +44,19 @@
 .filter-by-price{
     padding: 5px 5px;
 }
+.filter-by-category{
+  padding: 5px 5px;
+}
+.input-category{
+  display: flex;
+    justify-content: flex-start; 
+}
 .input-price{
     display: flex;
     justify-content: flex-start; 
+}
+.category{
+  margin-left: 5px; ;
 }
 .price-tag{
 margin-left: 5px; ;
