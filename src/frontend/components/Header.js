@@ -51,7 +51,9 @@ function Header() {
           </button>
         </form>
         <div className="link">
-          <div className="linkChild"><Link to="/cart">
+          <div className="linkChild">
+          <span className="text-product"><Link to= "/products">Products</Link></span>
+            <Link to="/cart">
             {<FontAwesomeIcon className="cart" icon={faCartShopping} />}
           </Link>
           <Link to="/wishlist">
