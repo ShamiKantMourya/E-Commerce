@@ -6,15 +6,16 @@ export const AuthContext = createContext();
 export function AuthProvider({ children }) {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState({ hasError: false, message: "" });
   const [signUpDetails, setSignUpDetails] = useState({
     fullName: "",
     userName: "",
-    emailId: "",
+    email: "",
     phoneNumber: "",
     password: "",
     confirmPassword: ""
   });
-
+  const {fullName,userName , email,password} = signUpDetails;
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -23,6 +24,7 @@ export function AuthProvider({ children }) {
       email: userEmail,
       password: userPassword
     }
+    console.log(creds)
     try {
       const response = await fetch('/api/auth/login', {
         method: "POST",
@@ -30,9 +32,8 @@ export function AuthProvider({ children }) {
       }
       )
 
-      const { encodedToken, foundUser } = await response.json();
+      const  encodedToken = await response.json();
       localStorage.setItem("encodedLoginToken", encodedToken);
-      localStorage.setItem("userLoginDetails", JSON.stringify(foundUser));
         if (location?.state?.from === undefined) {
           navigate("/");
         } else {
@@ -42,9 +43,7 @@ export function AuthProvider({ children }) {
     } catch (error) {
       console.log(error);
     }
-  }
-
-  const encodedLoginToken = localStorage.getItem("encodedLoginToken");
+  };
   const userLoginDetails = localStorage.getItem("userLoginDetails");
 
   const handleLogin = () => {
@@ -57,29 +56,47 @@ export function AuthProvider({ children }) {
     try {
       const response = await fetch("/api/auth/signup", {
         method: "POST",
-        body: JSON.stringify(signUpDetails),
+        body: JSON.stringify({fullName,userName , email,password}),
       });
-      console.log(await response.json());
+      const encodedToken = await response.json();
+      localStorage.setItem("encodedSignUpToken",encodedToken);
     } catch (error) {
       console.log(error);
     }
   };
-
-  // const encodedSignUpToken = localStorage.getItem("encodedSignUpToken");
-
+  const encodedSignUpToken =  localStorage.getItem("encodedSignUpToken");
   const signUpHandler = async () => {
     await getSignUpToken();
-  }
+    try {
+      setErrorMessage({ hasError: false, message: "" });
+        if (signUpDetails.password.length > 0 && signUpDetails.password === signUpDetails.confirmPassword) {
+          if (encodedSignUpToken !== null) {
+            navigate("/login");
+          }
+        } else {
+          setErrorMessage({
+            hasError: true,
+            message: "Passwords Do Not Match",
+          });
+        }
+    } catch (error) {
+
+      console.log(error);
+    }
+}
 
   //LogOut
 
   const logoutHandler = () => {
     localStorage.removeItem("encodedLoginToken");
+    setUserEmail("");
+    setUserPassword("");
     navigate("/");
+    
   };
 
   return (
-    <AuthContext.Provider value={{ handleLogin, userEmail, setUserEmail, userPassword, setUserPassword, signUpDetails, setSignUpDetails, signUpHandler, userLoginDetails, logoutHandler }}>
+    <AuthContext.Provider value={{ handleLogin, userEmail, setUserEmail, userPassword, setUserPassword, signUpDetails, setSignUpDetails, userLoginDetails, logoutHandler,signUpHandler,errorMessage,setErrorMessage }}>
       {children}
     </AuthContext.Provider>
   )
