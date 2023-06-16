@@ -64,7 +64,7 @@ const ProductPage = () => {
                                             className="breed-wishlist"
                                             onClick={() =>
                                                 addToWishlistHandler(
-                                                    { _id, breed, image, price, rating },
+                                                    product,
                                                     addDataDispatch,
                                                     navigate,
                                                     location
@@ -105,7 +105,7 @@ const ProductPage = () => {
                                                 )
                                             }
                                         >
-                                            Adopt Now
+                                            Add to cart
                                         </button>
                                     )}
                                 </div>
