@@ -21,15 +21,19 @@
     background: var(--ac_light);
 }
 .detail-body {
+    
     height: 100vh;
     width: 100%;
-    margin: 10px 0px 0px 10px;
+    padding: 10px 10px 10px 10px;
+    
 }
 
 .detail-card {
+    margin-top :50px ;
     display: flex;
+    margin: auto;
     justify-content: space-evenly;
-    width: 50vw;
+    max-width: 800px;
     height: auto;
     border: 2px solid var(--ac_black);
     border-radius: 5px;
@@ -37,10 +41,13 @@
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 .img-box{
-    padding: 0px 5px;
+    width: 60%;
+    box-sizing: border-box;
+    padding: 0px 50px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    /* align-items: center; */
     border-right: 1px solid var(--ac_black);
 }
 .img-box img {
@@ -48,15 +55,21 @@
     border-radius: 5px;
 }
 .details{
+    width: 40%;
     padding: 5px;
     line-height: 22px;
     
 }
-.details span {
+.details p span {
     font-weight: 600;
+    padding: 10px 0px;
+    color:Red;
+    display: block;
+
 }
 .details p{
-    font-weight: 500;
+    font-weight: 300;
+    color:green;
 }
 .detail-rating{
     display: flex;
@@ -66,3 +79,15 @@
 .detail-star{
    margin: 0px 4px;
 }
+.btn-box{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+ /* helper classed fo bugs */
+
+
+ #root > div.detail-main-body > div {
+    padding-top: 50px;
+ }
