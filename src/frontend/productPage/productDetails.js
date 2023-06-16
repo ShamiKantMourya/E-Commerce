@@ -35,6 +35,10 @@ export const ProductDetails = () => {
                     <p className="detail-category"><span>Category:</span> {productDetails.category}</p>
                     <p className="detail-rating"><span>Rating:</span><BsStar className="detail-star"/> {productDetails.rating}</p>
                     <p className="detail-description"><span>Description:</span> {productDetails.description}</p>
+                    <div className="btn-box">
+                        <button className="addtocart">ADD TO CART</button>
+                        <button className="addtowishlist">ADD TO WISHLIST</button>
+                     </div>
                     </div>
                 </div>
             </div>
