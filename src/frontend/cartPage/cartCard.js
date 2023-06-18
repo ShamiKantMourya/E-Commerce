@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { ToastContainer } from "react-toastify";
 import { useLocation, useNavigate } from "react-router";
 import { FaStar } from "react-icons/fa"
 
@@ -13,7 +12,6 @@ export const CartCard = ({ product }) => {
     const { _id, breed, price, image, qty, rating } =
       product;
   
-    // const encodedToken = localStorage.getItem("token");
     const {wishlist, addDataDispatch } =
       useContext(DataContext);
   
@@ -23,7 +21,6 @@ export const CartCard = ({ product }) => {
   
     return (
       <>
-        <ToastContainer />
         <div className="cart-card-container">
           <img src={image} alt={breed} />
           <div className="cart-card-content">
@@ -34,17 +31,17 @@ export const CartCard = ({ product }) => {
               </span>
             </div>
             <span>{price}</span>
-            <div className="cart-card-quantity">
-              <button
-                onClick={() => cartQuantityHandler(_id, "decrement", addDataDispatch)}
-              >
-                -
-              </button>
-              <p>{qty}</p>
+            <div className="cart-quantity-handler">
               <button
                 onClick={() => cartQuantityHandler(_id, "increment", addDataDispatch)}
               >
                 +
+              </button>
+              <p>{qty}</p>
+              <button
+                onClick={() => cartQuantityHandler(_id, "decrement", addDataDispatch)}
+              >
+                -
               </button>
             </div>
             <div className="cart-card-buttons">
@@ -52,7 +49,7 @@ export const CartCard = ({ product }) => {
                 className="cart-card-button"
                 onClick={() => removeFromCartHandler(_id, addDataDispatch)}
               >
-                Remove
+                Remove From Cart
               </button>
               {isProductInWishlist ? (
                 <button
