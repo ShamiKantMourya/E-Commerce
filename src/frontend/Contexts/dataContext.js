@@ -22,29 +22,29 @@ export const DataProvider = ({ children }) => {
     try {
       const response = await fetch("/api/categories");
       const category = await response.json();
-      const categories =  category.categories?.filter(pets => pets?.category === "pets")[0]?.items;
+      const categories = category.categories?.filter(pets => pets?.category === "pets")[0]?.items;
       dispatch({ type: "get_categories", payLoad: categories });
     } catch (error) {
       console.log(error);
     }
   };
 
-  const getCartItems = async() => {
+  const getCartItems = async () => {
     try {
       const response = await fetch("/api/user/cart", {
         headers: {
           authorization: encodedToken,
         },
       });
-   
+
       const cart = await response.json();
-      // console.log(cart);
+      console.log(cart);
       dispatch({ type: "get_cart", payLoad: cart?.cart });
     } catch (error) {
       console.log(error);
     }
   };
-// console.log(state.cart);
+
   const getWishlistItems = async () => {
     try {
       const response = await fetch("/api/user/wishlist", {
@@ -61,9 +61,8 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     getData();
     getCategories();
-    // getCartItems();
-
   }, []);
+
   return (
     <DataContext.Provider
       value={{
