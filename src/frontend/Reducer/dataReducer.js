@@ -1,25 +1,4 @@
 export const initial_state = {
-    user: {},
-    address: [
-      {
-        _id: "1",
-        name: "Arnav Mourya",
-        area: "Chand Chourah, Gaya, Bihar",
-        city: "Gaya",
-        state: "Bihar",
-        pincode: "823001",
-        phoneNumber: "76547747**",
-      },
-      {
-        _id: "2",
-        name: "Monjulika",
-        area: "Salt Lake sector 5, West Bengal",
-        city: "Kolkata",
-        state: "West Bengal",
-        pincode: "656554",
-        phoneNumber: "9876578761",
-      },
-    ],
     allProductData: [],
     cart: [],
     wishlist: [],
