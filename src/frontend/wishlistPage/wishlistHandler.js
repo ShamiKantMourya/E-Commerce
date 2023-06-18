@@ -28,7 +28,6 @@ export const removeFromWishlistHandler = async (productId, dispatch) => {
     });
     const wishlistData = await response.json();
     dispatch({ type: "remove_from_wishlist", payLoad: wishlistData?.wishlist });
-    console.log(await response.json());
   } catch (error) {
     console.log(error);
   }
