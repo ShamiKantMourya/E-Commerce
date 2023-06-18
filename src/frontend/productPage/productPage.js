@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { BsStar } from 'react-icons/bs';
 import { FaHeart } from 'react-icons/fa';
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+
 
 import "./productPage_Css/breed.css";
 import { itemIsInCart } from "../cartPage/cartHandler";
@@ -28,7 +28,6 @@ const ProductPage = () => {
     const navigate = useNavigate();
     const location = useLocation();
     console.log(allProductData);
-    // console.log(filteredProducts);
     if (filteredProducts.length === 0) return <Loader />;
     return (
         <>
@@ -38,7 +37,6 @@ const ProductPage = () => {
                     <Filter />
                 </div>
                 <div className='breed-container'>
-                    <ToastContainer />
                     {
                         filteredProducts.map((product) => {
                          const   { _id, breed, image, price, rating } = product;
