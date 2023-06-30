@@ -14,7 +14,7 @@ import { AuthContext } from "../Contexts/AuthContext";
 import IMAGES from "../image";
 
 function Header() {
-  const encodedLoginToken = localStorage.getItem("encodedLoginToken");
+  const encodedLoginToken = localStorage.getItem("token");
   const { logoutHandler } = useContext(AuthContext);
   return (
     <div className="headerParent">
