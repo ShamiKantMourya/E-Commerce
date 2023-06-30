@@ -1,40 +1,40 @@
 
-const encodedToken = localStorage.getItem("token");
+const encodedToken = () => localStorage.getItem("token");
 
 
 export const addToCartHandler = async (product, dispatch, navigate,
   location) => {
-    if(encodedToken){
-  try {
-    const response = await fetch("/api/user/cart", {
-      method: "POST",
-      body: JSON.stringify({product}),
-      headers: {
-        authorization: encodedToken,
-      },
-    });
-    const cartData = await response.json();
-    console.log(cartData);
-    console.log(product);
-    // dispatch({ type: "add_to_cart", payLoad: cartData?.cart });
-    
-  } catch (error) {
-    console.log(error);
+  if (encodedToken()) {
+    // console.log(encodedToken);
+    try {
+      const response = await fetch("/api/user/cart", {
+        method: "POST",
+        body: JSON.stringify({ product }),
+        headers: {
+          authorization: encodedToken(),
+        },
+      });
+      const cartData = await response.json();
+      console.log(cartData);
+      // console.log(product);
+      dispatch({ type: "add_to_cart", payLoad: cartData?.cart });
+
+    } catch (error) {
+      console.log(error);
+    }
+  } else {
+    navigate("/signin", { state: { from: location?.pathname } });
   }
-}else{
-  navigate("/login", { state: { from: location?.pathname } });
-}
 };
 export const removeFromCartHandler = async (productId, dispatch) => {
-
   try {
     const response = await fetch(`/api/user/cart/${productId}`, {
       method: "DELETE",
-      headers: { authorization: encodedToken },
+      headers: { authorization: encodedToken() },
     });
 
     const cartData = await response.json();
-
+    console.log(cartData);
     dispatch({ type: "remove_from_cart", payLoad: cartData?.cart });
   } catch (error) {
     console.log(error);
@@ -51,8 +51,8 @@ export const cartQuantityHandler = async (productId, type, dispatch) => {
           type: type,
         },
       }),
-      headers: { authorization: encodedToken },
-    }); 
+      headers: { authorization: encodedToken() },
+    });
     const cartData = await response.json();
 
     dispatch({ type: "update_cart_quantity", payLoad: cartData?.cart });

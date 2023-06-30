@@ -15,9 +15,9 @@ export default function SignIn() {
 
   const { handleLogin, userEmail, setUserEmail, userPassword, setUserPassword } = useContext(AuthContext);
   const guestLoginHandler = () => {
-    setUserEmail("arnavmourya@gmail.com");
-    setUserPassword("arnav7654");
-    handleLogin();
+    // setUserEmail("arnavmourya@gmail.com");
+    // setUserPassword("arnav7654");
+    handleLogin("arnavmourya@gmail.com","arnav7654");
   };
   return (
     <>
