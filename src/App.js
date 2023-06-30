@@ -6,13 +6,16 @@ import MockAPI from "./frontend/mockApi/mockApi"
 import SignIn from "./frontend/authPage/signIn";
 import SignUp from "./frontend/authPage/signUp";
 import CartPage from "./frontend/cartPage/cartPage";
-import RequireAuth from "./frontend/components/RequireAuth";
+// import RequireAuth from "./frontend/components/RequireAuth";
 import Wishlist from "./frontend/wishlistPage/wishlist";
 import Dog from "./frontend/productPage/dog";
 import Cat from "./frontend/productPage/cat";
 import Bird from "./frontend/productPage/bird";
 import Rodent from './frontend/productPage/rodent';
 import Filter from "./frontend/components/filter";
+import ProductPage from "./frontend/productPage/productPage";
+import { ProductDetails } from "./frontend/productPage/productDetails";
+import { CheckoutItems } from "./frontend/cartPage/checkOut";
 
 
 export default function App() {
@@ -23,6 +26,7 @@ export default function App() {
         <Route path="/mock-api" element={<MockAPI />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/products" element = {<ProductPage />} />
         <Route path="/cart" element={
           // <RequireAuth>
             <CartPage />
@@ -46,6 +50,8 @@ export default function App() {
         <Route path="/rodent" element = {<Rodent />}/>
 
         <Route path="/filter" element = {<Filter />} />
+        <Route path="/productdetails/:product_id" element = {<ProductDetails/>} />
+        <Route path="/checkout" element = {<CheckoutItems/>} />
       </Routes>
      
     </>
