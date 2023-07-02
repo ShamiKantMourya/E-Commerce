@@ -133,3 +133,19 @@ form h2{
   .signin-links a:hover{
     color: var(--ac_black);
   }
+  .guest-login{
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-size: 200%;
+    transition: 0.5s;
+    text-transform: uppercase;
+    background: var(--ac_dark);
+    color: #fff;
+  }

@@ -68,8 +68,8 @@
 
 }
 .details p{
-    font-weight: 300;
-    color:green;
+    font-weight: 400;
+    color:rgb(0, 88, 0);
 }
 .detail-rating{
     display: flex;
@@ -85,9 +85,29 @@
     justify-content: space-evenly;
     align-items: center;
 }
- /* helper classed fo bugs */
+.product-detail-button{
+    display: flex;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 8px 10px;
+    background-color: var(--accent);
+    color: var(--ac_black);
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.33s all ease-out;
+    cursor: pointer;
+    z-index: 100;
+}
+.product-detail-button:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.295);
+}
+
+ /* helper classed for bugs */
 
 
  #root > div.detail-main-body > div {
     padding-top: 50px;
  }
+

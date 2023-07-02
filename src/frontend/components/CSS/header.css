@@ -33,6 +33,9 @@
     align-items: center;
   
   }
+  .code{
+    color: aliceblue;
+  }
   .header {
     background: var(--ac_black);
     color: white;
@@ -46,7 +49,7 @@
   
   }
   .text-product{
-    opacity: 0.5;
+    opacity: 0.6;
   }
   .text-product:hover{
     opacity: 1;
@@ -147,4 +150,16 @@
 .logout:hover{
   transform: scale(1.1);
   box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.295);
+}
+.cart{
+  opacity: 0.5;
+}
+.cart:hover{
+  opacity: 1;
+}
+.wishlist{
+  opacity: 0.5;
+}
+.wishlist:hover{
+  opacity: 1;
 }

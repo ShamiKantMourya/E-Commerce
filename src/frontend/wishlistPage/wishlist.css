@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+    --accent: #aadee8;
+    --ac_dark: #4798a3;
+    --ac_black: #06272b;
+    --ac_light: #d3edf1;
+  }
+  
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    /* border: 1px dashed red; */
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+  }
+  .main-body{
+    background: var(--ac_light);
+    display: grid;
+    grid-template-columns: 0.7fr 3.3fr;
+  }
+.breed-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: auto !important; 
+}
+@media only screen and (min-width: 1000px) {
+    .breed-container {
+      max-width: 1000px;
+      margin: auto;
+     }
+  }
+.main-card{
+    width: 200px;
+    margin: 20px;
+
+}
+.breed-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px 5px;
+    height: 100%;
+    position: relative;
+    padding: 10px 0px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.bgClickLayer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 100vw;
+    width: 100vh;
+    background: rgba(255, 0, 0, 0);
+    z-index: 10;
+}
+.breed-image img{
+    width: 100%;
+    padding: 0px 0px 20px 0px;
+    
+}
+.breed-wishlist{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    outline: none;
+    margin:  0px 0px;
+    color:var(--ac_dark);
+    font-size: 25px;
+    background: none;
+    cursor: pointer;
+    z-index:100;
+}
+.breed-name{
+    font-weight: 600;
+    
+}
+.breed-price{
+    font-weight: 500;
+    margin: 4px;
+}
+.price-rating{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px 10px 0px;
+}
+.breed-rating{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   padding: 0px 0px 0px 10px;
+   font-weight: 600;
+}
+.adoptbtn{
+    display: flex;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 8px 10px;
+    background-color: var(--accent);
+    color: var(--ac_black);
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.33s all ease-out;
+    cursor: pointer;
+    z-index: 100;
+}
+.adoptbtn:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.295);
+}
+.star{
+    margin-right: 5px;
+}

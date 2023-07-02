@@ -17,8 +17,19 @@
 
   .filter-container{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     border-right: 2px solid var(--ac_black);
+  }
+  .filter-header{
+    display: flex;
+    justify-content: space-between;
+  }
+  .clear-btn{
+    border: none;
+    outline: none;
+    background: none;
+    align-items: center;
+    cursor: pointer;
   }
 
   .filter-child-container{
@@ -48,7 +59,7 @@
   padding: 5px 5px;
 }
 .input-category{
-  display: flex;
+    display: flex;
     justify-content: flex-start; 
 }
 .input-price{
@@ -56,7 +67,7 @@
     justify-content: flex-start; 
 }
 .category{
-  margin-left: 5px; ;
+  margin-left: 5px;
 }
 .price-tag{
 margin-left: 5px; ;
@@ -72,4 +83,14 @@ margin-left: 5px; ;
 }
 .filter-range input{
     padding: 5px;
+}
+.rating-options{
+  display: flex;
+  justify-content: flex-start; 
+}
+.rating-options{
+  padding: 5px 5px;
+}
+.ratings{
+  margin-left: 5px
 }

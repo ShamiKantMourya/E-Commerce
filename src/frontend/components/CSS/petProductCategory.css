@@ -26,10 +26,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 }
 .product-category{
     display: flex;
     justify-content: space-around;
     position: relative;
     width: 100%;
+}
+.product-category img{
+    width: 90%;
 }
