@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import "../landingPage/homePage.css";
-import { useEffect, useState } from "react";
+import {useContext} from 'react';
 
+import { DataContext } from "../Contexts/dataContext";
+import { FilterContext } from "../Contexts/filterContext";
+import "../landingPage/homePage.css";
 import IMAGES from "../image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -9,22 +11,9 @@ import PetProductCategory from "../components/petProductCategory";
 import Loader from "../components/Loader";
 
 export function LandingPage() {
-  const [category, setCategory] = useState([]);
-  const getData = async () => {
-    try {
-      const response = await fetch("/api/categories");
-      const data = await response.json();
-      setCategory(data.categories);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-  const pet =  category?.filter(pets => pets?.category === "pets")[0]?.items;
-  if(category.length === 0) return <Loader />;
+  const {categories} = useContext(DataContext);
+  const {filterDispatch} = useContext(FilterContext);
+  if(categories.length === 0) return <Loader />;
   return (
     <>
       <div className="container">
@@ -37,7 +26,7 @@ export function LandingPage() {
               alt=" banner"
             />
           </div>
-          <Link className="shopBtn" to={""}>
+          <Link className="shopBtn" to="/products">
             Adopt Now
           </Link>
         </div>
@@ -49,7 +38,7 @@ export function LandingPage() {
           </div>
           <div className="mainCategory">
             {
-             pet?.map(({ id, image, description,link }) => (
+             categories?.map(({ id, image, description,categoryName }) => (
                 <div className="categoryBox" key={id}>
                   <div className="card">
                     <div className="categoryImg">
@@ -65,7 +54,8 @@ export function LandingPage() {
                     </div>
                     <div className="description">
                       {description}
-                      <Link to={`/${link}`}>Adopt</Link>
+                      <Link to= "/products">Adopt</Link>
+                      {/* <span onClick={() =>{ filterDispatch({ type: "filter_by_category", payLoad: categoryName })}}><Link to= "/products">Adopt</Link></span> */}
                     </div>
                   </div>
                 </div>

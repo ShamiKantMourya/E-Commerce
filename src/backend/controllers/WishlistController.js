@@ -85,7 +85,9 @@ export const removeItemFromWishlistHandler = function (schema, request) {
     }
     let userWishlist = schema.users.findBy({ _id: userId }).wishlist;
     const productId = request.params.productId;
-    userWishlist = userWishlist.filter((item) => item._id !== productId);
+    console.log(typeof(productId),userWishlist, "from backend");
+    userWishlist = userWishlist.filter((item) =>{ console.log(typeof(item._id), "inside filter"); return item._id !== productId});
+    console.log(userWishlist);
     this.db.users.update({ _id: userId }, { wishlist: userWishlist });
     return new Response(200, {}, { wishlist: userWishlist });
   } catch (error) {

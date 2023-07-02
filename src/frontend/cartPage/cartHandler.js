@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 
 const encodedToken = () => localStorage.getItem("token");
 
@@ -15,9 +16,20 @@ export const addToCartHandler = async (product, dispatch, navigate,
         },
       });
       const cartData = await response.json();
-      console.log(cartData);
+      // console.log(cartData);
       // console.log(product);
-      dispatch({ type: "add_to_cart", payLoad: cartData?.cart });
+      if (response.status === 201) {
+        dispatch({ type: "add_to_cart", payLoad: cartData?.cart });
+        toast.success("Item added to cart.", {
+          style: {
+            fontSize: "large",
+            padding: ".5rem",
+            background: "#252525",
+            color: "whitesmoke",
+          },
+        });
+      }
+      // dispatch({ type: "add_to_cart", payLoad: cartData?.cart });
 
     } catch (error) {
       console.log(error);
@@ -34,8 +46,15 @@ export const removeFromCartHandler = async (productId, dispatch) => {
     });
 
     const cartData = await response.json();
-    console.log(cartData);
     dispatch({ type: "remove_from_cart", payLoad: cartData?.cart });
+    toast.error("Item removed from cart!", {
+      style: {
+        fontSize: "large",
+        padding: ".5rem",
+        background: "#252525",
+        color: "whitesmoke",
+      },
+    });
   } catch (error) {
     console.log(error);
   }
@@ -54,7 +73,7 @@ export const cartQuantityHandler = async (productId, type, dispatch) => {
       headers: { authorization: encodedToken() },
     });
     const cartData = await response.json();
-
+    console.log(cartData);
     dispatch({ type: "update_cart_quantity", payLoad: cartData?.cart });
   } catch (error) {
     console.log(error);

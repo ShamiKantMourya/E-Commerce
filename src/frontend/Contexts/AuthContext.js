@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const getLoginToken = async () => {
+  const getLoginToken = async (userEmail, userPassword) => {
     const creds = {
       email: userEmail,
       password: userPassword
@@ -30,8 +30,8 @@ export function AuthProvider({ children }) {
       }
       )
 
-      const  encodedToken = await response.json();
-      localStorage.setItem("encodedLoginToken", encodedToken);
+      const  {encodedToken} = await response.json();
+      localStorage.setItem("token", encodedToken);
         if (location?.state?.from === undefined) {
           navigate("/");
         } else {
@@ -44,8 +44,8 @@ export function AuthProvider({ children }) {
   };
   const userLoginDetails = localStorage.getItem("userLoginDetails");
 
-  const handleLogin = () => {
-    getLoginToken();
+  const handleLogin = (userName, password) => {
+    getLoginToken(userName, password);
   };
 
   //Sign Up
@@ -74,7 +74,7 @@ export function AuthProvider({ children }) {
   //LogOut
 
   const logoutHandler = () => {
-    localStorage.removeItem("encodedLoginToken");
+    localStorage.removeItem("token");
     setUserEmail("");
     setUserPassword("");
     navigate("/");
