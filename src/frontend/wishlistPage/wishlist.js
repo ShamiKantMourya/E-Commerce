@@ -26,6 +26,11 @@ const Wishlist = () => {
         <Header/>
         <Toaster position="bottom-right" reverseOrder={false} />
         {
+            wishlist.length === 0 ? (
+                <div className= "cart-header-text">
+                <h1>Add something to wishlist</h1>
+                </div>
+            ):
            wishlist.map((product) => {
             const   { _id, breed, image, price, rating } = product;
             const isProductInCart = itemIsInCart(cart, _id) 
