@@ -16,7 +16,6 @@
     margin: 0px;
   }
 .address-modal-container {
-    background-color: rgba(29, 54, 111, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +28,7 @@
   .address-modal-main {
     width: max-content;
     height: max-content;
-    width: 40%;
+    width: 50%;
     padding: 2rem;
     background-color: white;
     border: 1px solid var(--ac_dark);
@@ -47,15 +46,28 @@
     border: 1px solid var(--ac_dark);
     padding: 0.4rem;
     border-radius: 5px;
+    font-weight: 500;
+    font-size: 15px;
   }
   .address-modal-input-container button {
-    background-color: rgba(29, 54, 111, 0.5);
-    border: 1px solid var(--ac_dark);
-    padding: 0.4rem;
-    color: var(--ac_dark);
-    font-weight: bold;
+    display: flex;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 8px 10px;
+    background-color: var(--accent);
+    color: var(--ac_black);
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.33s all ease-out;
+    cursor: pointer;
   }
   .address-modal-input-container button:hover {
-    background-color: var(--ac_dark);
+    background-color: var(--ac_black);
     color: white;
   }
+  .address-modal-input-container .btn-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
