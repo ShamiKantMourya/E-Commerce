@@ -163,3 +163,11 @@
 .wishlist:hover{
   opacity: 1;
 }
+
+/*side navbar */
+
+.side-navbar{
+  height: 100vh;
+  width: 200px;
+  background: red;
+}

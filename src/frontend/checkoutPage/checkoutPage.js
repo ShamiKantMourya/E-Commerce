@@ -57,19 +57,19 @@ export const CheckoutPage = () => {
         },
       });
     }
-    // navigate("/products");
+    setTimeout(() => navigate("/products"), 2000);
   };
 
   return (
     <>
-    <Toaster position="bottom-right" reverseOrder={false} />
+      <Toaster position="bottom-right" reverseOrder={false} />
       <div className="payment-page">
         <h2>Checkout</h2>
         <div className="payment-page-container">
           <div className="user-address-container">
-            <div className="user-address-header">
-              <p className="user-address-header-title">My Addresses</p>
-              <button onClick={() => setShowAddressModal(true)}>
+            <div className="user-address-header helper-header">
+              <p className="user-address-header-title ">My Addresses</p>
+              <button className="add-address-btn" onClick={() => setShowAddressModal(true)}>
                 Add New Address
               </button>
             </div>
@@ -81,20 +81,18 @@ export const CheckoutPage = () => {
                 setNewAddress={setNewAddress}
               />
             )}
-
+            <div className="user-address-box">
             {address ? (
               address.map((addressItem) => (
                 <div className="user-address">
-                  <div
-                    style={{ display: "flex", justifyContent: "space-between" }}
-                  >
-                    <p style={{ fontWeight: "bold" }}>{addressItem.name}</p>
+                  <div>
                     <input
                       type="radio"
                       onChange={(e) => selectAddressHandler(e, addressItem)}
                       name="selected-address"
                     ></input>
                   </div>
+                  <p style={{fontWeight: "600"}}>{addressItem.name}</p>
                   <p>{addressItem.area}</p>
                   <p>
                     {addressItem.city}, {addressItem.state},{" "}
@@ -102,48 +100,42 @@ export const CheckoutPage = () => {
                   </p>
                   <p>{addressItem.phoneNumber}</p>
                 </div>
+               
               ))
             ) : (
               <h1>No Address Found</h1>
             )}
+      </div>
           </div>
           <div className="payment-card">
-            <p className="payment-card-title">Order-Details</p>
-            <hr></hr>
+            <p className="payment-card-title helper-header">Order-Details</p>
+            <div className="payment-order-details">
             <div>
-              <p className="payment-card-subtitle">Items ({itemsInCart}) </p>
-              <p className="payment-card-subtitle">Quantity </p>
+              <p className="payment-txt-item">Items ({itemsInCart}) </p>
             </div>
-            {cart.map(({ _id, name, qty }) => (
+            {cart.map(({ _id, breed, qty }) => (
               <div key={_id}>
-                <p className="payment-card-subtitle">{name} </p>
-                <p>{qty}</p>
+                <p className="payment-txt-item">Product Name: {breed} </p>
+                <p className="payment-txt-item">Quantity: {qty}</p>
               </div>
             ))}
-            <p className="payment-card-title">Price Details</p>
-            <hr></hr>
-            <div>
-              <p className="payment-card-subtitle">Total Price </p>
-              <p className="payment-card-subtitle">{totalPrice} </p>
+            <div className="payment-card-subtitle">
+              <p className="payment-txt"> Price: </p>
+              <p className="payment-data">{totalPrice} </p>
             </div>
-            <div>
-              <p className="payment-card-subtitle">Discount </p>
-              <p className="payment-card-subtitle">{discount} </p>
+            <div className="payment-card-subtitle">
+              <p className="payment-txt">Discount: </p>
+              <p className="payment-data">{discount} </p>
             </div>
-            <div>
-              <p className="payment-card-subtitle">Grand Total</p>
-              <p className="payment-card-subtitle">{totalPrice - discount} </p>
+            <div className="payment-card-subtitle">
+              <p className="payment-txt">Grand Total:</p>
+              <p className="payment-data">{totalPrice - discount} </p>
             </div>
-            <p className="payment-card-title">Delivery Details</p>
-            <hr></hr>
+          </div>
+            <p
+            className="payment-card-title">Delivery Details</p>
             {selectedAddress !== null ? (
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                }}
-              >
+              <div className="user-delivery-details">
                 <p style={{ fontWeight: "bold" }}>{selectedAddress.name}</p>
 
                 <p>{selectedAddress.area}</p>
@@ -156,8 +148,9 @@ export const CheckoutPage = () => {
             ) : (
               <p className="payment-card-subtitle">No Address Found</p>
             )}
-
-            <button onClick={() => paymentHandler()}>Proceed to Payment</button>
+          <div className="proceed-btn-box">
+          <button className="proceed-btn" onClick={() => paymentHandler()}>Proceed to Payment</button>
+          </div>
           </div>
         </div>
       </div>

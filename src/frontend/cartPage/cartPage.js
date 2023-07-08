@@ -6,6 +6,7 @@ import { CartCard } from "./cartCard";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { CheckoutCard } from "../components/checkoutCard";
+import "./cartpage.css";
 
 const CartPage = () => {
   const { cart } = useContext(DataContext);
@@ -16,7 +17,9 @@ const CartPage = () => {
       <Toaster position="bottom-right" reverseOrder={false} />
       {
         cart.length === 0 ? (
+          <div className= "cart-header-text">
           <h1>Add something to cart</h1>
+          </div>
         ) : (
           <div>
             <h1>Cart ({cart.length})</h1>

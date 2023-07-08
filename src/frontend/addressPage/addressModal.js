@@ -68,6 +68,7 @@ export const AddressModal = ({
               }
             ></input>
             <button
+            className="btn-text"
               onClick={() =>
                 addAddressHandler(
                   newAddress,
@@ -79,6 +80,7 @@ export const AddressModal = ({
               Add Address
             </button>
             <button
+            className="btn-text"
               onClick={() =>
                 editAddressFromModalHandler(
                   addressId,
@@ -90,10 +92,14 @@ export const AddressModal = ({
             >
               Edit Address
             </button>
-            <button onClick={() => cancelAddressHAndler(setShowAddressModal)}>
+            <button 
+            className="btn-text"
+            onClick={() => cancelAddressHAndler(setShowAddressModal)}>
               Cancel
             </button>
-            <button onClick={() => dummyAddressHandler(setNewAddress)}>
+            <button
+            className="btn-text"
+            onClick={() => dummyAddressHandler(setNewAddress)}>
               Default Address
             </button>
           </div>

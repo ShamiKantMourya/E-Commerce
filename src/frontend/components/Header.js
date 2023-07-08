@@ -17,59 +17,81 @@ function Header() {
   const encodedLoginToken = localStorage.getItem("token");
   const { logoutHandler } = useContext(AuthContext);
   return (
-    <div className="headerParent">
-      <div className="header">
-        {}
-        <p className="code">We are Barking Discounts! Use Code <strong>HAPPYDOGO</strong></p>
-        <div className="contact">
-          <p className="mob">
-            <span>{<FontAwesomeIcon icon={faPhone} />} </span>+91-765477470*
-          </p>
-          <p className="email">
-            <span><FontAwesomeIcon icon={faEnvelope} /> </span> shamikant300@gmail.com
-          </p>
+    <>
+      <div className="headerParent">
+        <div className="header">
+          { }
+          <p className="code">We are Barking Discounts! Use Code <strong>HAPPYDOGO</strong></p>
+          <div className="contact">
+            <p className="mob">
+              <span>{<FontAwesomeIcon icon={faPhone} />} </span>+91-765477470*
+            </p>
+            <p className="email">
+              <span><FontAwesomeIcon icon={faEnvelope} /> </span> shamikant300@gmail.com
+            </p>
+          </div>
+        </div>
+        <div className="logoPart">
+          <Link className="imgParent" to="/">
+            <img className="logoImg" src={IMAGES.logo} alt=" site logo" />
+          </Link>
+          <form action="" className="searchBar">
+            <input
+              type="text"
+              id="header-search"
+              placeholder="search for your pet"
+              name="s"
+            />
+            <button type="submit">
+              {
+                <FontAwesomeIcon
+                  className="searchIcon"
+                  icon={faMagnifyingGlass}
+                />
+              }
+            </button>
+          </form>
+          <div className="link">
+            <div className="linkChild">
+              <span className="text-product"><Link to="/products">Products</Link></span>
+              <Link to="/cart">
+                {<FontAwesomeIcon className="cart" icon={faCartShopping} />}
+              </Link>
+              <Link to="/wishlist">
+                {<FontAwesomeIcon className="wishlist" icon={faHeart} />}
+              </Link>
+              {!encodedLoginToken ? (
+                <Link to="/signin">
+                  {" "}
+                  <button>Login</button>
+                </Link>
+              ) : (
+                <button className="logout" onClick={logoutHandler}>Logout</button>
+              )}</div>
+          </div>
         </div>
       </div>
-      <div className="logoPart">
-        <Link className="imgParent" to="/">
-          <img className="logoImg" src={IMAGES.logo} alt=" site logo" />
-        </Link>
-        <form action="" className="searchBar">
-          <input
-            type="text"
-            id="header-search"
-            placeholder="search for your pet"
-            name="s"
-          />
-          <button type="submit">
-            {
-              <FontAwesomeIcon
-                className="searchIcon"
-                icon={faMagnifyingGlass}
-              />
-            }
-          </button>
-        </form>
+      {/* <div className="side-navbar">
         <div className="link">
           <div className="linkChild">
-          <span className="text-product"><Link to= "/products">Products</Link></span>
+            <span className="text-product"><Link to="/products">Products</Link></span>
             <Link to="/cart">
-            {<FontAwesomeIcon className="cart" icon={faCartShopping} />}
-          </Link>
-          <Link to="/wishlist">
-            {<FontAwesomeIcon className="wishlist" icon={faHeart} />}
-          </Link>
-          {!encodedLoginToken ? (
-            <Link to="/signin">
-              {" "}
-              <button>Login</button>
+              {<FontAwesomeIcon className="cart" icon={faCartShopping} />}
             </Link>
-          ) : (
-            <button className="logout" onClick={logoutHandler}>Logout</button>
-          )}</div>
+            <Link to="/wishlist">
+              {<FontAwesomeIcon className="wishlist" icon={faHeart} />}
+            </Link>
+            {!encodedLoginToken ? (
+              <Link to="/signin">
+                {" "}
+                <button>Login</button>
+              </Link>
+            ) : (
+              <button className="logout" onClick={logoutHandler}>Logout</button>
+            )}</div>
         </div>
-      </div>
-    </div>
+      </div> */}
+    </>
   );
 }
 

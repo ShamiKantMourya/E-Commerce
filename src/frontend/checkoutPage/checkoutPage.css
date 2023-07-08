@@ -15,12 +15,103 @@
     font-family: 'Montserrat', sans-serif;
     margin: 0px;
   }
+  body{
+    background-color: var(--ac_light);
+  }
   .payment-page{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 1200px;
+    margin: auto;
+ 
+  }
+  .add-address-btn{
+    display: flex;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 8px 10px;
+    background-color: var(--accent);
+    color: var(--ac_black);
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.33s all ease-out;
+    cursor: pointer;
+    /* z-index: 100; */
   }
   .payment-page-container{
+    width: 100%;
+    padding: 30px;
+  }
+ 
+  .user-address-header-title{
+    font-weight: 500;
+  }
+  .user-address, .user-delivery-details{
+    padding: 10px;
+    background: white;
+    margin: 10px;
+    border-radius: 5px;
+    width: 45%;
     
+    /* border: 3px solid var(--ac_dark); */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.24);
+  }
+  .user-address-box{
+    display: flex !important;
+    flex-wrap: wrap;
+  }
+  .payment-txt-item{
+    margin-left: 50px;
+  }
+  .payment-card-title{
+    font-weight: 500;
+    border-bottom: 1px solid var(--ac_black);
+    padding: 5px;
+  }
+  .payment-card-subtitle{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0px;
+    border-top: 1px dotted grey;
+  }
+  .payment-card-subtitle p:nth-child(1){
+    margin-left: 50px;
+  }
+  .payment-card-subtitle p:nth-child(2){
+    margin-right: 50px;
+  }
+  .payment-order-details{
+   padding: 10px;
+   background: white;
+   margin: 10px 0px;
+   border-radius: 5px;
+   width: 100%;
+   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.24);
+   
+  }
+  .proceed-btn-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* z-index: 0; */
+  }
+  .proceed-btn{
+    display: flex;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 8px 10px;
+    background-color: var(--accent);
+    color: var(--ac_black);
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.33s all ease-out;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  .payment-txt-item{
+    padding: 5px 0px;
   }
