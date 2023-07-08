@@ -1,0 +1,9 @@
+.cart-header-text{
+    height: 55vh;
+}
+.cart-header-text h1{
+    display: flex;
+    height: 55vh;
+    align-items: center;
+    justify-content: center;
+}
