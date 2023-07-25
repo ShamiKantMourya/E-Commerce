@@ -23,13 +23,24 @@
   .filter-header{
     display: flex;
     justify-content: space-between;
+    height: 2rem;
+    align-items: center;
+    padding: 5px 5px;
   }
-  .clear-btn{
+  .filter-header button{
     border: none;
     outline: none;
-    background: none;
     align-items: center;
     cursor: pointer;
+  }
+  .clear-btn{
+   border-radius: 5px;
+   height: 1.6rem;
+   width: 4rem;
+   display: flex;
+   justify-content: center;
+   background-color: var(--ac_black);
+   color: var(--ac_light);
   }
 
   .filter-child-container{
