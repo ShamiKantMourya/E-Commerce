@@ -1,0 +1,121 @@
+:root {
+    --accent: #aadee8;
+    --ac_dark: #4798a3;
+    --ac_black: #06272b;
+    --ac_light: #d3edf1;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    /* border: 1px dashed red; */
+    font-family: 'Montserrat', sans-serif;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&display=swap");
+
+.profile-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
+    flex-direction: column;
+}
+
+.profile-card-animation {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-card-animation p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 25px;
+    color: var(--ac_black);
+}
+
+.user-profile-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 32rem;
+    border: 1px solid var(--ac_black);
+    margin-top: 4rem;
+    border-radius: 5px;
+}
+
+.profile-card-header {
+    display: flex;
+    justify-content: space-between;
+    height: 2rem;
+    width: 100%;
+    color: var(--ac_light);
+    padding: 5px 5px;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.profile-card-header a {
+    margin: 0px 5px;
+}
+
+.profile-card-user-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 100%;
+    padding: 2px 2px;
+    border-radius: 5px;
+    border: 1px solid var(--ac_black);
+    color: var(--ac_dark);
+}
+
+.profile-card-user-details:hover {
+    background-color: var(--ac_black);
+    color: var(--ac_light);
+}
+
+.user-details-content {
+    display: flex;
+    /* justify-content: center; */
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-name {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0px;
+}
+
+.user-detail-heading {
+    font-weight: 600;
+    padding: 0px 5px;
+}
+
+.user-email {
+    display: flex;
+    justify-content: center;
+    margin: 2.5px 0px;
+}
+
+.user-details-content button {
+    border: none;
+    outline: none;
+}
+
+.user-card-logout-btn {
+    margin: 5px 0px;
+    height: 2rem;
+    width: 4rem;
+    background-color: var(--ac_black);
+    color: var(--ac_light);
+    border-radius: 5px;
+    font-weight: 500;
+}
