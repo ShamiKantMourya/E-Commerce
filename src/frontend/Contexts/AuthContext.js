@@ -7,8 +7,8 @@ export function AuthProvider({ children }) {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [signUpDetails, setSignUpDetails] = useState({
-    fullName: "",
-    userName: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phoneNumber: "",
     password: "",
@@ -22,7 +22,7 @@ export function AuthProvider({ children }) {
       email: userEmail,
       password: userPassword
     }
-    console.log(creds)
+    // console.log(creds)
     try {
       const response = await fetch('/api/auth/login', {
         method: "POST",
@@ -30,19 +30,20 @@ export function AuthProvider({ children }) {
       }
       )
 
-      const  {encodedToken} = await response.json();
-      localStorage.setItem("token", encodedToken);
-        if (location?.state?.from === undefined) {
-          navigate("/");
-        } else {
-          navigate(location?.state?.from);
-        }
-      console.log(encodedToken)
+      const data = await response.json();
+      localStorage.setItem("token", data?.encodedToken);
+      localStorage.setItem("userDetails", JSON.stringify(data?.foundUser));
+      if (location?.state?.from === undefined) {
+        navigate("/");
+      } else {
+        navigate(location?.state?.from);
+      }
+      // console.log(encodedToken)
     } catch (error) {
       console.log(error);
     }
   };
-  const userLoginDetails = localStorage.getItem("userLoginDetails");
+  // const userLoginDetails = localStorage.getItem("userLoginDetails");
 
   const handleLogin = (userName, password) => {
     getLoginToken(userName, password);
@@ -55,10 +56,13 @@ export function AuthProvider({ children }) {
         method: "POST",
         body: JSON.stringify(signUpDetails),
       });
-      const data = await response.json();
+      const user = await response.json();
 
-      localStorage.setItem("token", data.encodedToken);
-      localStorage.setItem("userDetails", JSON.stringify(data.createdUser));
+      console.log(user, "signup");
+
+      localStorage.setItem("token", user?.encodedToken);
+      localStorage.setItem("userDetails", JSON.stringify(user?.createdUser));
+      // console.log(localStorage.getItem("userDetails"));
     } catch (error) {
       console.log(error);
     }
@@ -78,11 +82,11 @@ export function AuthProvider({ children }) {
     setUserEmail("");
     setUserPassword("");
     navigate("/");
-    
+
   };
 
   return (
-    <AuthContext.Provider value={{ handleLogin, userEmail, setUserEmail, userPassword, setUserPassword, signUpDetails, setSignUpDetails, userLoginDetails, logoutHandler,signUpHandler,encodedToken }}>
+    <AuthContext.Provider value={{ handleLogin, userEmail, setUserEmail, userPassword, setUserPassword, signUpDetails, setSignUpDetails, logoutHandler, signUpHandler, encodedToken }}>
       {children}
     </AuthContext.Provider>
   )
