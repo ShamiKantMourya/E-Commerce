@@ -42,13 +42,22 @@ export default function App() {
               <CheckoutPage />
             </RequireAuth>
           } />
-        <Route
-          path="/userProfile"
-          element={
-            <RequireAuth>
+          <Route
+            path="/profile"
+            element={
+              <RequireAuth>
               <UserProfile />
-            </RequireAuth>
-          } />
+              </RequireAuth>
+            }
+          />
+            <Route
+            path="/address"
+            element={
+              <RequireAuth>
+                <UserProfile />
+              </RequireAuth>
+            }
+          />
         <Route path="/productdetails/:product_id" element={<ProductDetails />} />
         <Route
           path="*"
