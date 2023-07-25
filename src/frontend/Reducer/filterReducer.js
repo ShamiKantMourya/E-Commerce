@@ -14,8 +14,8 @@ export const reducer = (state, action) => {
         ...state,
         filter_from_category: state.filter_from_category.includes(payLoad)
           ? state.filter_from_category.filter(
-            (category) => category !== payLoad
-          )
+              (category) => category !== payLoad
+            )
           : [...state.filter_from_category, payLoad],
       };
 
