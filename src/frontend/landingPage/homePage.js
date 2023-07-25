@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import {useContext} from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from 'react';
 
 import { DataContext } from "../Contexts/dataContext";
 import { FilterContext } from "../Contexts/filterContext";
@@ -11,9 +11,17 @@ import PetProductCategory from "../components/petProductCategory";
 import Loader from "../components/Loader";
 
 export function LandingPage() {
-  const {categories} = useContext(DataContext);
-  const {filterDispatch} = useContext(FilterContext);
-  if(categories.length === 0) return <Loader />;
+  const { categories } = useContext(DataContext);
+  const { filterDispatch } = useContext(FilterContext);
+  const navigate = useNavigate();
+
+  // const selectCategory = (categoryName) => {
+  //   filterDispatch({ type: "filter_by_category", payLoad:categoryName});
+  //   navigate('/products');
+  // }
+
+
+  if (categories.length === 0) return <Loader />;
   return (
     <>
       <div className="container">
@@ -38,7 +46,7 @@ export function LandingPage() {
           </div>
           <div className="mainCategory">
             {
-             categories?.map(({ id, image, description,categoryName }) => (
+              categories?.map(({ id, image, description, categoryName }) => (
                 <div className="categoryBox" key={id}>
                   <div className="card">
                     <div className="categoryImg">
@@ -54,8 +62,10 @@ export function LandingPage() {
                     </div>
                     <div className="description">
                       {description}
-                      <Link to= "/products">Adopt</Link>
-                      {/* <span onClick={() =>{ filterDispatch({ type: "filter_by_category", payLoad: categoryName })}}><Link to= "/products">Adopt</Link></span> */}
+                      <Link to="/products">
+                          Adopt
+                      </Link>
+
                     </div>
                   </div>
                 </div>
