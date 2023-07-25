@@ -31,8 +31,17 @@ const filterByCategories = (products, filtersApplied) => {
         )
       : products;
   };
+
+  const filterBySearch = (products, filtersApplied) => {
+    return filtersApplied.searched_product.length > 0
+      ? products.filter(({ product }) =>
+          product.toLowerCase().includes(filtersApplied.searched_product.toLowerCase())
+        )
+      : products;
+  };
   export const getFilteredProducts = (products, filtersApplied) => {
     const filterFunctions = [
+      filterBySearch,
       filterByCategories,
       sortByPrice,
       filterByRating,
