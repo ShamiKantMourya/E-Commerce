@@ -15,7 +15,13 @@
     font-family: 'Montserrat', sans-serif;
     margin: 0px;
   }
-
+.main-box{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 100%;
+  padding: 5px 10px;
+}
 .checkout-card-container {
     border: 1px solid grey;
     padding: 1rem;
@@ -44,11 +50,22 @@
   }
   
   .checkout-button {
-    width: 100%;
-    background-color: var(--ac_dark);
-    color: var(--accent);
+    width: 8rem;
+    background-color: var(--ac_black);
+    color: var(--ac_light);
     padding: 0.5rem;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+  }
+  .btn-checkout-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-checkout-link button{
+    border-radius: 5px;
+    /* margin-top: 5px; */
   }
   
   @media (max-width: 968px) {

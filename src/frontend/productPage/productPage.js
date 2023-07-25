@@ -59,7 +59,6 @@ const ProductPage = () => {
                                             <button
                                                 className="breed-wishlist"
                                                 onClick={() => {
-
                                                     addToWishlistHandler(
                                                         product,
                                                         addDataDispatch,

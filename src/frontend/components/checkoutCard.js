@@ -25,13 +25,13 @@ export const CheckoutCard = () => {
                     <div className="checkoutCard-heading">
                         <h2>Price Details</h2>
                     </div>
-                    <p>Total Price: <strong>₹</strong>{totalPrice}</p>
-                    <p>Discount: <strong>₹</strong>{discount}</p>
-                    <p>Order Total:<strong>₹</strong>{discountedPrice}</p>
+                    <p>Total Price: <strong>₹</strong> {totalPrice}</p>
+                    <p>Discount: <strong>₹</strong> {discount}</p>
+                    <p>Order Total:<strong>₹</strong> {discountedPrice}</p>
                     <hr />
-                    <p>Your Savings: {discount} <span>({percent}%)</span></p>
+                    <p>Your Savings: <strong>₹</strong> {discount} <span>({percent}%)</span></p>
                 </div>
-                <Link to="/checkout">
+                <Link to="/checkout" className="btn-checkout-link">
                     <button type="button" className="checkout-button">
                         Checkout
                     </button>

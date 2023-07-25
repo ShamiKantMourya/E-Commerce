@@ -17,11 +17,11 @@ const CartPage = () => {
       <Toaster position="bottom-right" reverseOrder={false} />
       {
         cart.length === 0 ? (
-          <div className= "cart-header-text">
-          <h1>Add something to cart</h1>
+          <div className="add-to-cart-text">
+            <h1>Add something to cart</h1>
           </div>
         ) : (
-          <div>
+          <div className="cart-checkout-page">
             <h1>Cart ({cart.length})</h1>
             <div className="cart-container-data">
               <div className="cart-cards-container">
@@ -29,8 +29,8 @@ const CartPage = () => {
                   <CartCard product={product} />
                 ))}
               </div>
-              <div className="checkout">
-              <CheckoutCard />
+              <div className="cart-page-checkout">
+                <CheckoutCard />
               </div>
             </div>
           </div>
