@@ -117,25 +117,6 @@ const {
             <p className="ratings">1 and above</p> 
             </div>
           </div>
-          {/* <div className='filter-by-price'>
-          <h4 className='filter-txt'>Price</h4>
-          <div className='input-price'>
-            <input type='checkbox' value= '5000+' onChange={handleProductPrice} />
-            <p className='price-tag'>Above 5k</p>
-            </div>
-            <div className='input-price'>
-            <input type='checkbox' value='10000+' onChange={handleProductPrice} />
-            <p className='price-tag'>Above 10k</p>
-            </div>
-            <div className='input-price'>
-            <input type='checkbox' value= '15000+' onChange={handleProductPrice} />
-            <p className='price-tag'>Above 15k</p>
-            </div>
-            <div className='input-price'>
-            <input type='checkbox' value= '20000+' onChange={handleProductPrice} />
-            <p className='price-tag'>Above 20k</p>
-            </div>
-        </div> */}
           <div className='filter-sort'>
             <h4 className='filter-txt'>Sort By Price</h4>
             <div className='sort-input'>

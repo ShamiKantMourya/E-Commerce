@@ -23,7 +23,7 @@ const ProductPage = () => {
     const { cart, wishlist, addDataDispatch } = useContext(DataContext);
     const navigate = useNavigate();
     const location = useLocation();
-    // console.log(allProductData);
+    console.log(filteredProducts);
     if (filteredProducts.length === 0) return <Loader />;
     return (
         <>

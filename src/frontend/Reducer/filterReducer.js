@@ -1,5 +1,5 @@
 export const initial_state = {
-  search_text: "",
+  searched_product: "",
   filter_from_category: [],
   price_range_filter: "",
   sort_string_from_filter: "",
@@ -37,6 +37,12 @@ export const reducer = (state, action) => {
         filter_from_rating: "",
         search_text: "",
       };
+
+      case "filter_by_search":
+        return {
+          ...state,
+          searched_product: payLoad,
+        };
 
     default:
       return state;

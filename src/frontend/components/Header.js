@@ -1,21 +1,31 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faUser,
   faPhone,
   faEnvelope,
   faMagnifyingGlass,
   faCartShopping,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
-import "./CSS/header.css";
 
-import { AuthContext } from "../Contexts/AuthContext";
+import "./CSS/header.css";
+import { FilterContext } from "../Contexts/filterContext";
 import IMAGES from "../image";
 
 function Header() {
+  const [searchProduct, setSearchProduct] = useState("");
+  const { filterDispatch } = useContext(FilterContext);
+  const navigate = useNavigate();
+
+  const searchProductHandler = (searchProduct) => {
+    filterDispatch({ type: "filter_by_search", payLoad: searchProduct });
+    navigate("/products");
+  };
+
+
   const encodedLoginToken = localStorage.getItem("token");
-  const { logoutHandler } = useContext(AuthContext);
   return (
     <>
       <div className="headerParent">
@@ -35,14 +45,14 @@ function Header() {
           <Link className="imgParent" to="/">
             <img className="logoImg" src={IMAGES.logo} alt=" site logo" />
           </Link>
-          <form action="" className="searchBar">
+          <div className="searchBar">
             <input
               type="text"
               id="header-search"
               placeholder="search for your pet"
-              name="s"
+              onChange={(event) => setSearchProduct(event.target.value)}
             />
-            <button type="submit">
+            <button onClick={() => searchProductHandler(searchProduct)}>
               {
                 <FontAwesomeIcon
                   className="searchIcon"
@@ -50,7 +60,7 @@ function Header() {
                 />
               }
             </button>
-          </form>
+          </div>
           <div className="link">
             <div className="linkChild">
               <span className="text-product"><Link to="/products">Products</Link></span>
@@ -63,10 +73,12 @@ function Header() {
               {!encodedLoginToken ? (
                 <Link to="/signin">
                   {" "}
-                  <button>Login</button>
+                  <button className="user-profilre-icon"><FontAwesomeIcon className="header-user-icon" icon={faUser} /></button>
                 </Link>
               ) : (
-                <button className="logout" onClick={logoutHandler}>Logout</button>
+                <Link to="/profile">
+                  <FontAwesomeIcon className="header-user-icon" icon={faUser} />
+                </Link>
               )}</div>
           </div>
         </div>

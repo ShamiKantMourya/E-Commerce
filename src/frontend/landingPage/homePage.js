@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useContext } from 'react';
 
 import { DataContext } from "../Contexts/dataContext";
@@ -13,12 +13,10 @@ import Loader from "../components/Loader";
 export function LandingPage() {
   const { categories } = useContext(DataContext);
   const { filterDispatch } = useContext(FilterContext);
-  const navigate = useNavigate();
 
-  // const selectCategory = (categoryName) => {
-  //   filterDispatch({ type: "filter_by_category", payLoad:categoryName});
-  //   navigate('/products');
-  // }
+  const selectCategoryHandler = (categoryName) => {
+    filterDispatch({ type: "filter_by_category", payLoad:categoryName});
+  }
 
 
   if (categories.length === 0) return <Loader />;
@@ -48,7 +46,7 @@ export function LandingPage() {
             {
               categories?.map(({ id, image, description, categoryName }) => (
                 <div className="categoryBox" key={id}>
-                  <div className="card">
+                  <div className="card" >
                     <div className="categoryImg">
                       <img
                         src={image}
@@ -63,7 +61,7 @@ export function LandingPage() {
                     <div className="description">
                       {description}
                       <Link to="/products">
-                          Adopt
+                      <span  onClick={() => selectCategoryHandler(categoryName)}>Adopt</span>    
                       </Link>
 
                     </div>
