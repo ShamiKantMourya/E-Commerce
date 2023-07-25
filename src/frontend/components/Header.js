@@ -20,8 +20,9 @@ function Header() {
   const navigate = useNavigate();
 
   const searchProductHandler = (searchProduct) => {
-    filterDispatch({ type: "filter_by_search", payLoad: searchProduct });
     navigate("/products");
+    filterDispatch({ type: "filter_by_search", payLoad: searchProduct });
+   
   };
 
 

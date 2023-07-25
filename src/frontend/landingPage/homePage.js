@@ -15,7 +15,9 @@ export function LandingPage() {
   const { filterDispatch } = useContext(FilterContext);
 
   const selectCategoryHandler = (categoryName) => {
+    console.log(categoryName);
     filterDispatch({ type: "filter_by_category", payLoad:categoryName});
+  
   }
 
 

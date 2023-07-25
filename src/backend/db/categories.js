@@ -14,7 +14,7 @@ export const categories = [
        
     _id: uuid(),
     link: "dog",
-    categoryName: "Dogs",
+    categoryName: "Dog",
     image: IMAGES.Dog,
     description:
       "Different kind of dogs breed ranging price from INR 5000 to INR 30000",
@@ -22,7 +22,7 @@ export const categories = [
   {
     _id: uuid(),
     link: "cat",
-    categoryName: "Cats",
+    categoryName: "Cat",
     image: IMAGES.Cat,
     description:
       "Different kind of cats breed ranging price from INR 1000 to INR 20000.",
@@ -30,7 +30,7 @@ export const categories = [
   {
     _id: uuid(),
     link: "bird",
-    categoryName: "Birds",
+    categoryName: "Bird",
     image: IMAGES.Bird,
     description:
       "Different kind of birds breed ranging price from INR 5000 to INR 15000.",
@@ -38,7 +38,7 @@ export const categories = [
   {
     _id: uuid(),
     link: "rodent",
-    categoryName: "Rodents",
+    categoryName: "Rodent",
     image: IMAGES.Rodents,
     description:
       "Different kind of rodent breed ranging price from INR 1000 to INR 10000.",

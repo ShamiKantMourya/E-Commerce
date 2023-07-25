@@ -8,17 +8,20 @@ export const initial_state = {
 
 export const reducer = (state, action) => {
   const { type, payLoad } = action;
+  console.log(payLoad, type);
   switch (type) {
-    case "filter_by_category":
+    case "filter_by_category":{
+      const filteredProduct = state.filter_from_category.includes(payLoad.toLowerCase())
+        ? state.filter_from_category.filter(
+            (category) => category !== payLoad.toLowerCase()
+          )
+        : [...state.filter_from_category, payLoad.toLowerCase()]
+        console.log(filteredProduct)
       return {
         ...state,
-        filter_from_category: state.filter_from_category.includes(payLoad)
-          ? state.filter_from_category.filter(
-              (category) => category !== payLoad
-            )
-          : [...state.filter_from_category, payLoad],
+    filter_from_category: filteredProduct 
       };
-
+    }
     case "filter_by_price_range":
       return { ...state, price_range_filter: payLoad };
 
