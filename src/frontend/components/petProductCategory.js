@@ -15,7 +15,7 @@ const PetProductCategory = () => {
             console.log(error)
         }
     };
-    console.log(productCategory);
+    // console.log(productCategory);
 
     useEffect(() => {
         getProductData();
