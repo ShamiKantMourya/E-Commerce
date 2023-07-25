@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { v4 as uuid } from "uuid";
 
 import { DataContext } from "../Contexts/dataContext";
-import "./addressCard.css";
+import "./addresscard.css";
 import {
   editAddressHandler,
   deleteAddressHandler,
