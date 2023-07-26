@@ -4,6 +4,7 @@ import Lottie from "react-lottie";
 
 import { AuthContext } from "../../Contexts/AuthContext";
 import { AddressCard } from "../../addressPage/AddressCard";
+import OrderCard from "../OrderCard/OrderCard";
 import Hello from "../../Animations/Hello.json";
 
 import "./ProfileCard.css";
@@ -90,8 +91,7 @@ const ProfileCard = () => {
           ) : location.pathname === "/address" ? (
             <AddressCard />
           ) : (
-            //  
-            ""
+            <OrderCard />
           )
         }
       </div>
