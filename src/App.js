@@ -58,6 +58,14 @@ export default function App() {
               </RequireAuth>
             }
           />
+            <Route
+            path="/orderSummary"
+            element={
+              <RequireAuth>
+                <UserProfile />
+              </RequireAuth>
+            }
+          />
         <Route path="/productdetails/:product_id" element={<ProductDetails />} />
         <Route
           path="*"
