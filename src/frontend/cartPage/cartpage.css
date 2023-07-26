@@ -35,4 +35,7 @@
   .add-to-cart-text{
     height: 55vh;
     overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
