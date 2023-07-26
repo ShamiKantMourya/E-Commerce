@@ -35,7 +35,7 @@ const PetProductCategory = () => {
         {
             product?.map(({id , image , categoryName}) => (
               <div className='product-category'key={id}>
-                <div className='category-item' >
+                <div className='category-item' key={id}>
                     <img className='category-image' src={image} alt='category' />
                     <h3 className='category-name'>{categoryName}</h3>
                 </div>
