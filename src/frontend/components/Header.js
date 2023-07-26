@@ -73,8 +73,7 @@ function Header() {
               </Link>
               {!encodedLoginToken ? (
                 <Link to="/signin">
-                  {" "}
-                  <button className="user-profilre-icon"><FontAwesomeIcon className="header-user-icon" icon={faUser} /></button>
+                  <FontAwesomeIcon className="header-user-icon" icon={faUser} />
                 </Link>
               ) : (
                 <Link to="/profile">
