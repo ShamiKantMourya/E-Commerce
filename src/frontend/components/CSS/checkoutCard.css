@@ -66,6 +66,7 @@
   .btn-checkout-link button{
     border-radius: 5px;
     /* margin-top: 5px; */
+    cursor: pointer;
   }
   
   @media (max-width: 968px) {
