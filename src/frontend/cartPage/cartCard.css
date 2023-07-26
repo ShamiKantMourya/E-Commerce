@@ -115,3 +115,20 @@
   display: flex;
   justify-content: center;
 }
+.cart-quantity-handler button{
+  display: flex;
+  justify-content: center;
+  height: 1.2rem;
+  width: 1.2rem;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.inc-dec-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}

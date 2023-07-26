@@ -35,13 +35,13 @@ export const CartCard = ({ product }) => {
                 </span>
               </div>
               <div className="cart-quantity-handler">
-                <button
+                <button className="inc-dec-btn"
                   onClick={() => cartQuantityHandler(_id, "increment", addDataDispatch)}
                 >
                   +
                 </button>
                 <p className="quantity">{qty}</p>
-                <button
+                <button className="inc-dec-btn"
                   onClick={() => qty <= 1 ? removeFromCartHandler(_id, addDataDispatch) : cartQuantityHandler(_id, "decrement", addDataDispatch)}
                 >
                   -
