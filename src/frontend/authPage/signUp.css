@@ -97,3 +97,11 @@ form .user-details .input-box input{
 .register-btn:disabled{
     background-color: var(--accent);
 }
+.signup-login-link{
+    color: var(--ac_black);
+    opacity: 0.6;
+}
+.signup-login-link:hover{
+    color: var(--ac_black);
+    opacity: 1;
+}

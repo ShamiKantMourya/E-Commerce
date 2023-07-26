@@ -57,7 +57,7 @@ const SignUp = () => {
                         <div className='registerbtn'>
                             <button disabled = {password !== confirmPassword} type='submit' onClick={signUpHandler} className='register-btn'>Register</button>
                         </div>
-                        <Link to="/login">Already have account<span
+                        <Link to="/signin" className='signup-login-link'>Already have account? <span
                         >Login</span></Link>
                     </form>
                 </div>

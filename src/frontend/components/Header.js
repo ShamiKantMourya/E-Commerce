@@ -72,7 +72,7 @@ function Header() {
                 {<FontAwesomeIcon className="wishlist" icon={faHeart} />}
               </Link>
               {!encodedLoginToken ? (
-                <Link to="/login">
+                <Link to="/signin">
                   <FontAwesomeIcon className="header-user-icon" icon={faUser} />
                 </Link>
               ) : (
