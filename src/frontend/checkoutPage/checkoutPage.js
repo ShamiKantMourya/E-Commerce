@@ -67,7 +67,7 @@ export const CheckoutPage = () => {
         },
       });
     }
-    setTimeout(() => navigate("/products"), 2000);
+    setTimeout(() => navigate("/products"), 1000);
   };
 
   return (
