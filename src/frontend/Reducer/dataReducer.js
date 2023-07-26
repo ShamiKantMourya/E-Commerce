@@ -4,6 +4,7 @@ export const initial_state = {
   cart: [],
   wishlist: [],
   categories: [],
+  orderList: [],
   address: [
     {
       _id: "1",
@@ -24,6 +25,8 @@ export const initial_state = {
       phoneNumber: "7654770981",
     },
   ],
+  selectedAddress: null,
+  addressToBeEdited: null,
 };
 
 export const reducer = (state, action) => {
@@ -70,6 +73,7 @@ export const reducer = (state, action) => {
       return {
         ...state,
         cart: [],
+        orderList: [...state.orderList, ...payLoad],
       };
     case "delete_address":
       return {
