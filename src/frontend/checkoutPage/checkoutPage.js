@@ -10,6 +10,7 @@ import { DataContext } from "../Contexts/dataContext";
 //   deleteAddressHandler,
 //   addAddressHandler,
 // } from "../addressPage/addressHandler";
+import { removeFromCartHandler } from "../cartPage/cartHandler";
 import { AddressModal } from "../addressPage/addressModal";
 import "./checkoutPage.css";
 
@@ -38,7 +39,16 @@ export const CheckoutPage = () => {
 
   const paymentHandler = () => {
     if (selectedAddress) {
-      addDataDispatch({ type: "payment" });
+      const myOrders = cart?.map((product) => ({
+        ...product,
+        address: selectedAddress,
+      }));
+
+      cart?.forEach(({ _id }) =>
+      removeFromCartHandler(_id, addDataDispatch)
+      );
+
+      addDataDispatch({ type: "payment", payLoad: myOrders });
       toast.success("Order placed Sucessfully.!", {
         style: {
           fontSize: "large",
