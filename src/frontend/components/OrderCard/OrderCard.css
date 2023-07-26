@@ -3,6 +3,7 @@
     --ac_dark: #4798a3;
     --ac_black: #06272b;
     --ac_light: #d3edf1;
+    --ac_white: #fff;
 }
 
 *,
@@ -15,40 +16,89 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&display=swap");
 
-.order-list-card-container{
+.order-list-card-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 20rem;
-    height: 15rem;
+    width: 100%;
+    padding: 5px 10px;
+    overflow: auto;
 }
 
-.order-list-card-heading{
-color: var(--ac_black);
-font-weight: 600;
+.order-list-card-heading {
+    color: var(--ac_black);
+    font-weight: 600;
+}
+
+.order-card {
+    display: flex;
+    background-color: var(--ac_white);
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+.order-card p{
+    padding: 1px 2px;
+}
+.order-card-img-box {
+    height: 13rem;
+    width: 12rem;
+    display: flex;
+    border-radius: 5px;
+}
+
+.order-card-img-box img {
+    padding: 5px 5px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    
+}
+.order-card-details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.order-card-product-name-text{
+    font-weight: 500;
+}
+.order-card-content-detail{
+    display: flex;
+    align-items: center;
+}
+.order-card-product-text{
+    font-weight: 600;
+    padding-right: 5px;
+}
+.shipping-address-details p{
+    font-weight: 500;
 }
 
 
-
-
-.no-order-container{
+.no-order-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     height: 10rem;
     align-items: center;
 }
-.no-order-text{
+
+.no-order-text {
     padding: 5px;
     margin: 5px 0px;
+    font-weight: 500;
 }
-.no-order-container a{
+
+.no-order-container a {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 2rem;
 }
-.product-page-link{
+
+.product-page-link {
     background-color: var(--ac_black);
     color: var(--ac_light);
     height: 2rem;
@@ -56,9 +106,10 @@ font-weight: 600;
     align-items: center;
     justify-content: center;
     padding: 2px 5px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
-.no-order-container a:hover{
+
+.no-order-container a:hover {
     background-color: var(--accent);
     color: var(--ac_black);
 }

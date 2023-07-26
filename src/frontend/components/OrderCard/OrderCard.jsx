@@ -16,12 +16,12 @@ const OrderCard = () => {
             {orderList?.map((product) => (
               <div className="order-card" key={product._id}>
                 <div className="order-card-img-box">
-                  <img src={product.image} alt={product.name} />
+                  <img src={product.image} alt={product.breed} />
                 </div>
 
                 <div className="order-card-details">
                   <p className="order-card-product-name-text">
-                    {product.name}
+                    {product.breed}
                   </p>
                   <div className="order-card-content-detail">
                     <p className="order-card-product-text">Qty:</p>
@@ -29,7 +29,7 @@ const OrderCard = () => {
                   </div>
                   <div className="order-card-content-detail">
                     <p className="order-card-product-text">Price:</p>
-                    {product.price}
+                    <strong>₹</strong> {product.price}
                   </div>
                   <div className="shipped-text">
                     <p className="order-card-product-text">Shipped to:</p>
@@ -51,7 +51,7 @@ const OrderCard = () => {
         ) : (
           <div className="no-order-container">
             <p className="no-order-text">No Orders Found</p>
-            <Link className="product-page-link">
+            <Link to="/products" className="product-page-link">
               Shop Now
             </Link>
           </div>
