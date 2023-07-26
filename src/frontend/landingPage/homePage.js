@@ -34,9 +34,9 @@ export function LandingPage() {
               alt=" banner"
             />
           </div>
-          <Link className="shopBtn" to="/products">
+          {/* <Link className="shopBtn" to="/products">
             Adopt Now
-          </Link>
+          </Link> */}
         </div>
         <div className="pets">
           <div className="line">
