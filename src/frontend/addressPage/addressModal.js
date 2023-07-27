@@ -4,7 +4,7 @@ import "./addressModal.css";
 import { DataContext } from "../Contexts/dataContext";
 import {
   addAddressHandler,
-  editAddressFromModalHandler,
+  // editAddressFromModalHandler,
   cancelAddressHAndler,
   dummyAddressHandler,
 } from "./addressHandler";
@@ -79,7 +79,7 @@ export const AddressModal = ({
             >
               Add Address
             </button>
-            <button
+            {/* <button
             className="btn-text"
               onClick={() =>
                 editAddressFromModalHandler(
@@ -91,7 +91,7 @@ export const AddressModal = ({
               }
             >
               Edit Address
-            </button>
+            </button> */}
             <button 
             className="btn-text"
             onClick={() => cancelAddressHAndler(setShowAddressModal)}>
