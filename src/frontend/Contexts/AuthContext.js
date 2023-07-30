@@ -6,6 +6,7 @@ export const AuthContext = createContext();
 export function AuthProvider({ children }) {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const [token, setToken] = useState();
   const [signUpDetails, setSignUpDetails] = useState({
     firstName: "",
     lastName: "",
@@ -62,13 +63,17 @@ export function AuthProvider({ children }) {
 
       localStorage.setItem("token", user?.encodedToken);
       localStorage.setItem("userDetails", JSON.stringify(user?.createdUser));
-      // console.log(localStorage.getItem("userDetails"));
+      setToken(localStorage.getItem("token"));
+      console.log(localStorage.getItem("userDetails"));
+      const signUpData = JSON.parse(localStorage.getItem("userDetails"));
+      // console.log(signUpData);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const encodedToken = localStorage.getItem("token");
+  // const encodedToken = localStorage.getItem("token");
+  // console.log(encodedToken);
 
   const signUpHandler = () => {
     getSignUpToken();
@@ -86,7 +91,7 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ handleLogin, userEmail, setUserEmail, userPassword, setUserPassword, signUpDetails, setSignUpDetails, logoutHandler, signUpHandler, encodedToken }}>
+    <AuthContext.Provider value={{ handleLogin, userEmail, setUserEmail, userPassword, setUserPassword, signUpDetails, setSignUpDetails, logoutHandler, signUpHandler, token }}>
       {children}
     </AuthContext.Provider>
   )

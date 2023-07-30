@@ -13,6 +13,7 @@ import {
 import "./CSS/header.css";
 import { FilterContext } from "../Contexts/filterContext";
 import IMAGES from "../image";
+import { AuthContext } from "../Contexts/AuthContext";
 
 function Header() {
   const [searchProduct, setSearchProduct] = useState("");
@@ -25,8 +26,8 @@ function Header() {
    
   };
 
-
-  const encodedLoginToken = localStorage.getItem("token");
+  const { token } = useContext(AuthContext);
+  
   return (
     <>
       <div className="headerParent">
@@ -71,7 +72,7 @@ function Header() {
               <Link to="/wishlist">
                 {<FontAwesomeIcon className="wishlist" icon={faHeart} />}
               </Link>
-              {!encodedLoginToken ? (
+              {!token ? (
                 <Link to="/signin">
                   <FontAwesomeIcon className="header-user-icon" icon={faUser} />
                 </Link>
