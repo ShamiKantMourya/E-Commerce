@@ -27,6 +27,7 @@ function Header() {
   };
 
   const { token } = useContext(AuthContext);
+  // console.log(token, "token");
   
   return (
     <>
