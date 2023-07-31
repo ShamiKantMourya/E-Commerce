@@ -15,6 +15,7 @@ import { FilterContext } from '../Contexts/filterContext';
 import { DataContext } from '../Contexts/dataContext';
 import { getFilteredProducts } from '../filterFunctions';
 import Loader from "../components/Loader";
+import NoProductFound from '../components/NoProductFound/NoProductFound';
 
 const ProductPage = () => {
     const { allProductData } = useContext(DataContext);
@@ -24,7 +25,7 @@ const ProductPage = () => {
     const navigate = useNavigate();
     const location = useLocation();
     console.log(filteredProducts);
-    if (filteredProducts.length === 0) return <Loader />;
+
     return (
         <>
             <Header />
@@ -35,80 +36,81 @@ const ProductPage = () => {
                 </div>
                 <div className='breed-container'>
                     {
-                        filteredProducts.map((product) => {
-                            const { _id, breed, image, price, rating } = product;
-                            const isProductInCart = itemIsInCart(cart, _id);
-                            const isProductInWishlist = itemIsInWishlist(wishlist, _id);
-                            return (
-                                <div className='main-card' key={_id}>
-                                    <div className='breed-card'>
-                                        <NavLink to={`/productdetails/${_id}`}>
-                                            <div className='bgClickLayer'></div>
-                                        </NavLink>
-                                        {isProductInWishlist ? (
-                                            <button
-                                                style={{ color: "red" }}
-                                                className="breed-wishlist"
-                                                onClick={() =>
-                                                    removeFromWishlistHandler(_id, addDataDispatch)
-                                                }
-                                            >
-                                                <BsFillBookmarkHeartFill />
-                                            </button>
-                                        ) : (
-                                            <button
-                                                className="breed-wishlist"
-                                                onClick={() => {
-                                                    addToWishlistHandler(
-                                                        product,
-                                                        addDataDispatch,
-                                                        navigate,
-                                                        location
-                                                    )
-                                                }
-                                                }
-                                            >
-                                                <BsFillBookmarkHeartFill />
-                                            </button>
-                                        )}
-                                        <div className='breed-image'>
-                                            <img src={image} alt={breed} />
-                                        </div>
-                                        <p className='breed-name'>{breed}</p>
-                                        <div className='price-rating'>
-                                            <p className='breed-price'><strong>₹</strong> {price}</p>
-                                            <p className='breed-rating'><BsStar className='star' />{rating}</p>
-                                        </div>
-                                        {isProductInCart ? (
-                                            <button type="button" className="adoptbtn">
-                                                <NavLink
-                                                    to="/cart"
+                        filteredProducts.length === 0 ? <NoProductFound /> :
+                            filteredProducts.map((product) => {
+                                const { _id, breed, image, price, rating } = product;
+                                const isProductInCart = itemIsInCart(cart, _id);
+                                const isProductInWishlist = itemIsInWishlist(wishlist, _id);
+                                return (
+                                    <div className='main-card' key={_id}>
+                                        <div className='breed-card'>
+                                            <NavLink to={`/productdetails/${_id}`}>
+                                                <div className='bgClickLayer'></div>
+                                            </NavLink>
+                                            {isProductInWishlist ? (
+                                                <button
+                                                    style={{ color: "red" }}
+                                                    className="breed-wishlist"
+                                                    onClick={() =>
+                                                        removeFromWishlistHandler(_id, addDataDispatch)
+                                                    }
                                                 >
-                                                    Go to Cart
-                                                </NavLink>
-                                            </button>
-                                        ) : (
-                                            <button type="button"
-                                                className="adoptbtn"
-                                                onClick={(e) => {
-                                                    e.preventDefault()
-                                                    addToCartHandler(
-                                                        product,
-                                                        addDataDispatch,
-                                                        navigate,
-                                                        location
-                                                    )
-                                                }
-                                                }
-                                            >
-                                                Add to cart
-                                            </button>
-                                        )}
+                                                    <BsFillBookmarkHeartFill />
+                                                </button>
+                                            ) : (
+                                                <button
+                                                    className="breed-wishlist"
+                                                    onClick={() => {
+                                                        addToWishlistHandler(
+                                                            product,
+                                                            addDataDispatch,
+                                                            navigate,
+                                                            location
+                                                        )
+                                                    }
+                                                    }
+                                                >
+                                                    <BsFillBookmarkHeartFill />
+                                                </button>
+                                            )}
+                                            <div className='breed-image'>
+                                                <img src={image} alt={breed} />
+                                            </div>
+                                            <p className='breed-name'>{breed}</p>
+                                            <div className='price-rating'>
+                                                <p className='breed-price'><strong>₹</strong> {price}</p>
+                                                <p className='breed-rating'><BsStar className='star' />{rating}</p>
+                                            </div>
+                                            {isProductInCart ? (
+                                                <button type="button" className="adoptbtn">
+                                                    <NavLink
+                                                        to="/cart"
+                                                    >
+                                                        Go to Cart
+                                                    </NavLink>
+                                                </button>
+                                            ) : (
+                                                <button type="button"
+                                                    className="adoptbtn"
+                                                    onClick={(e) => {
+                                                        e.preventDefault()
+                                                        addToCartHandler(
+                                                            product,
+                                                            addDataDispatch,
+                                                            navigate,
+                                                            location
+                                                        )
+                                                    }
+                                                    }
+                                                >
+                                                    Add to cart
+                                                </button>
+                                            )}
+                                        </div>
                                     </div>
-                                </div>
 
-                            )
-                        })
+                                )
+                            })
                     }
                 </div>
             </div>
