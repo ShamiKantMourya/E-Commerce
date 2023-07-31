@@ -25,6 +25,10 @@ const ProductPage = () => {
     const navigate = useNavigate();
     const location = useLocation();
     console.log(filteredProducts);
+ 
+  
+        if (allProductData.length === 0 ) return <Loader /> 
+    
 
     return (
         <>

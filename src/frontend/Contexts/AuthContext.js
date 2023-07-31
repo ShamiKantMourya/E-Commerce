@@ -63,7 +63,7 @@ export function AuthProvider({ children }) {
       localStorage.setItem("token", user?.encodedToken);
       localStorage.setItem("userDetails", JSON.stringify(user?.createdUser));
       setToken(localStorage.getItem("token"));
-      console.log(localStorage.getItem("userDetails"));
+      // console.log(localStorage.getItem("userDetails"));
       // const signUpData = JSON.parse(localStorage.getItem("userDetails"));
       // console.log(signUpData);
     } catch (error) {

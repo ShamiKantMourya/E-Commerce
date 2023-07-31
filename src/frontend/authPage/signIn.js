@@ -15,10 +15,12 @@ export default function SignIn() {
 
   const { handleLogin, userEmail, setUserEmail, userPassword, setUserPassword } = useContext(AuthContext);
   const guestLoginHandler = () => {
-    // setUserEmail("arnavmourya@gmail.com");
-    // setUserPassword("arnav7654");
+  
     handleLogin("arnavmourya@gmail.com","arnav7654");
   };
+  const submitLogin = () => {
+    handleLogin(userEmail, userPassword);
+  }
   return (
     <>
       <Header />
@@ -43,7 +45,7 @@ export default function SignIn() {
                 <input type='password' value={userPassword} placeholder='Password' onChange={(event) => setUserPassword(event.target.value)} />
               </div>
             </div>
-            <button type='button' className='btn' onClick={() => handleLogin()}>Login</button>
+            <button type='button' className='btn' onClick={() => submitLogin()}>Login</button>
             <button onClick={guestLoginHandler} type="button" className="guest-login">
               Guest Login
             </button>
