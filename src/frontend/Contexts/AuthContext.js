@@ -34,17 +34,16 @@ export function AuthProvider({ children }) {
       const data = await response.json();
       localStorage.setItem("token", data?.encodedToken);
       localStorage.setItem("userDetails", JSON.stringify(data?.foundUser));
+      setToken(localStorage.getItem("token"));
       if (location?.state?.from === undefined) {
         navigate("/");
       } else {
         navigate(location?.state?.from);
       }
-      // console.log(encodedToken)
     } catch (error) {
       console.log(error);
     }
   };
-  // const userLoginDetails = localStorage.getItem("userLoginDetails");
 
   const handleLogin = (userName, password) => {
     getLoginToken(userName, password);
@@ -65,7 +64,7 @@ export function AuthProvider({ children }) {
       localStorage.setItem("userDetails", JSON.stringify(user?.createdUser));
       setToken(localStorage.getItem("token"));
       console.log(localStorage.getItem("userDetails"));
-      const signUpData = JSON.parse(localStorage.getItem("userDetails"));
+      // const signUpData = JSON.parse(localStorage.getItem("userDetails"));
       // console.log(signUpData);
     } catch (error) {
       console.log(error);
